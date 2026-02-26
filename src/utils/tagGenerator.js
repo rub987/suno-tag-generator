@@ -1,16 +1,21 @@
 export const generateFullOutput = (selections, customTags) => {
   const { genre, moods, instruments, vocals, tempo, production } = selections;
+
+  console.log('selections:', selections); // debug temporaire
+
   const parts = [];
 
   if (genre) parts.push(genre);
-  if (moods?.length) parts.push(...moods);
+  if (Array.isArray(moods) && moods.length) parts.push(...moods);
   if (tempo) parts.push(tempo);
   if (vocals) parts.push(vocals);
-  if (instruments?.length) parts.push(...instruments);
-  if (production?.length) parts.push(...production);
+  if (Array.isArray(instruments) && instruments.length) parts.push(...instruments);
+  if (Array.isArray(production) && production.length) parts.push(...production);
 
   const customClean = customTags
-    ?.split(',').map(t => t.trim()).filter(Boolean) || [];
+    ?.split(',')
+    .map(t => t.trim())
+    .filter(Boolean) || [];
 
   const allTags = [...parts, ...customClean];
   const style = allTags.join(', ');
