@@ -1,27 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  body {
-    @apply bg-gray-950 text-white min-h-screen;
-  }
-}
-
-@layer components {
-  .tag-chip {
-    @apply px-3 py-1.5 rounded-full text-sm font-medium 
-           border transition-all duration-200 cursor-pointer select-none;
-  }
-  .tag-chip-default {
-    @apply border-gray-600 bg-gray-800 text-gray-300
-           hover:border-purple-500 hover:text-purple-300;
-  }
-  .tag-chip-selected {
-    @apply border-purple-500 bg-purple-600 text-white
-           shadow-lg shadow-purple-500/20;
-  }
-  .tag-chip-medium {
-    @apply border-yellow-600/50 bg-yellow-900/20 text-yellow-300;
-  }
+body {
+  margin: 0;
+  background-color: #030712;
+  color: white;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
