@@ -1,14 +1,16 @@
+// src/App.jsx
 import { useState } from 'react';
 import { useTags } from './hooks/useTags';
 import { generateFullOutput } from './utils/tagGenerator';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
-import TagSelector from './components/Form/TagSelector';
+import StyleTool from './components/Tools/StyleTool';
+import StructureTool from './components/Tools/StructureTool';
 import TagOutput from './components/Output/TagOutput';
 
 const App = () => {
   const { tags, loading, source, forceRefresh } = useTags();
-
+  const [activeTab, setActiveTab] = useState('style');
   const [selections, setSelections] = useState({
     genre: null,
     moods: [],
@@ -17,8 +19,8 @@ const App = () => {
     tempo: null,
     production: []
   });
-
   const [customTags, setCustomTags] = useState('');
+  const output = generateFullOutput(selections, customTags);
 
   const handleToggle = (category, tagLabel, multiple) => {
     setSelections(prev => {
@@ -39,93 +41,85 @@ const App = () => {
   };
 
   const handleReset = () => {
-    setSelections({
-      genre: null,
-      moods: [],
-      instruments: [],
-      vocals: null,
-      tempo: null,
-      production: []
-    });
+    setSelections({ genre: null, moods: [], instruments: [], vocals: null, tempo: null, production: [] });
     setCustomTags('');
   };
 
-  const output = generateFullOutput(selections, customTags);
-
   if (loading) return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex items-center justify-center min-h-screen bg-amber-50">
       <div className="text-center">
-        <div className="w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-gray-400">Chargement des tags...</p>
+        <div className="w-12 h-12 border-4 border-teal-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+        <p className="text-gray-500">Chargement des tags...</p>
       </div>
     </div>
   );
 
   return (
-    <>
-      <Header version={tags?.version} source={source} onRefresh={forceRefresh} />
-      <main className="max-w-4xl mx-auto px-4 py-8">
-        <div className="text-center mb-10">
-          <p className="text-gray-400 text-lg">
-            Génère des meta-tags optimisés pour{' '}
-            <strong className="text-purple-400">Suno AI</strong>
-          </p>
-          <p className="text-gray-600 text-sm mt-1">
-            Dernière mise à jour des tags : {tags?.lastUpdated}
+    <div className="min-h-screen bg-amber-50">
+      <Header onRefresh={forceRefresh} />
+
+      <main className="max-w-3xl mx-auto px-4 py-8">
+
+        {/* Info Banner */}
+        <div className="bg-teal-50 border border-teal-200 rounded-xl p-4 mb-8">
+          <p className="text-gray-700 text-sm">
+            <strong>Suno AI utilise 2 champs distincts.</strong>{' '}
+            Cet outil génère le contenu pour chacun d'eux séparément.
+            Utilise les deux onglets ci-dessous dans l'ordre.
           </p>
         </div>
 
-        <div className="bg-gray-900 rounded-2xl border border-gray-800 p-6">
-          {Object.entries(tags?.categories || {}).map(([key, categoryData]) => (
-            <TagSelector
-              key={key}
-              category={key}
-              categoryData={categoryData}
-              selected={selections[key]}
-              onToggle={handleToggle}
-            />
-          ))}
-
-          <div className="mb-6">
-            <label className="block font-semibold text-gray-200 mb-2">
-              ✏️ Tags personnalisés (séparés par virgules)
-            </label>
-            <input
-              type="text"
-              placeholder="ex: cinematic, epic, 80s style..."
-              value={customTags}
-              onChange={e => setCustomTags(e.target.value)}
-              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg
-                         text-white placeholder-gray-500 focus:outline-none
-                         focus:border-purple-500 transition-colors"
-            />
-          </div>
+        {/* Tabs */}
+        <div className="grid grid-cols-2 gap-4 mb-8">
+          <button
+            onClick={() => setActiveTab('style')}
+            className={`p-4 rounded-xl border-2 text-left transition-all ${
+              activeTab === 'style'
+                ? 'border-teal-500 bg-white shadow-md'
+                : 'border-gray-200 bg-white/50 hover:border-gray-300'
+            }`}
+          >
+            <div className="text-2xl mb-2">🎨</div>
+            <div className="font-bold text-gray-800">Outil 1 — Style</div>
+            <div className="text-xs text-gray-500 mt-1">Genre, ambiance, instruments, voix, tempo</div>
+            <div className="text-xs text-teal-600 mt-2 font-medium">→ Champ "Style of Music"</div>
+          </button>
 
           <button
-            onClick={handleReset}
-            className="px-6 py-3 border border-gray-600 rounded-xl
-                       text-gray-400 hover:text-white hover:border-gray-400
-                       transition-all font-medium"
+            onClick={() => setActiveTab('structure')}
+            className={`p-4 rounded-xl border-2 text-left transition-all ${
+              activeTab === 'structure'
+                ? 'border-teal-500 bg-white shadow-md'
+                : 'border-gray-200 bg-white/50 hover:border-gray-300'
+            }`}
           >
-            🗑️ Reset
+            <div className="text-2xl mb-2">📝</div>
+            <div className="font-bold text-gray-800">Outil 2 — Structure</div>
+            <div className="text-xs text-gray-500 mt-1">Construit le squelette de tes paroles section par section</div>
+            <div className="text-xs text-teal-600 mt-2 font-medium">→ Champ "Lyrics"</div>
           </button>
         </div>
 
-        <TagOutput output={output} />
+        {/* Tool Content */}
+        {activeTab === 'style' && (
+          <StyleTool
+            tags={tags}
+            selections={selections}
+            customTags={customTags}
+            onToggle={handleToggle}
+            onCustomTagsChange={setCustomTags}
+            onReset={handleReset}
+            output={output}
+          />
+        )}
 
-        <div className="mt-6 flex items-center gap-6 text-xs text-gray-600">
-          <span className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-purple-600 inline-block" />
-            Tag confirmé
-          </span>
-          <span className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-yellow-800 inline-block" />
-            Tag non confirmé officiellement
-          </span>
-        </div>
+        {activeTab === 'structure' && (
+          <StructureTool />
+        )}
+
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

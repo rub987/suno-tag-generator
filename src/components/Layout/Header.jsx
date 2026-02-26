@@ -1,20 +1,20 @@
-const Header = ({ version, source, onRefresh }) => (
-  <header className="border-b border-gray-800 bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
-    <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div>
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          🎵 Suno Meta Tag Generator
-        </h1>
-        <p className="text-xs text-gray-500 mt-0.5">
-          Tags v{version} · Source: {source}
-        </p>
+// src/components/Layout/Header.jsx
+const Header = ({ onRefresh }) => (
+  <header className="bg-gradient-to-r from-teal-600 to-teal-400 text-white shadow-md">
+    <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="flex items-center gap-3">
+        <span className="text-2xl">🎵</span>
+        <div>
+          <h1 className="text-xl font-bold leading-tight">Suno Tag Creator</h1>
+          <p className="text-teal-100 text-xs">Te Hotu Mana — L'outil des musiciens de Polynésie</p>
+        </div>
       </div>
       <button
         onClick={onRefresh}
-        className="text-xs text-gray-400 hover:text-white border border-gray-700
-                   hover:border-gray-500 px-3 py-1.5 rounded-lg transition-all"
+        className="bg-white/20 hover:bg-white/30 text-white text-sm 
+                   px-4 py-2 rounded-full transition-all border border-white/30"
       >
-        🔄 Refresh
+        🌺 Tahiti
       </button>
     </div>
   </header>
