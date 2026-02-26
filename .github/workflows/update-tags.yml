@@ -1,0 +1,32 @@
+name: Update Suno Tags
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  update-tags:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Bump version date
+        run: |
+          node -e "
+            const fs = require('fs');
+            const tags = JSON.parse(fs.readFileSync('src/data/tags.json', 'utf8'));
+            tags.lastUpdated = new Date().toISOString().split('T')[0];
+            const [maj, min, patch] = tags.version.split('.');
+            tags.version = maj + '.' + min + '.' + (parseInt(patch) + 1);
+            fs.writeFileSync('src/data/tags.json', JSON.stringify(tags, null, 2));
+          "
+      - name: Commit if changed
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add src/data/tags.json
+          git diff --staged --quiet || git commit -m "🤖 Auto-update tags $(date +'%Y-%m-%d')"
+          git push
