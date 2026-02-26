@@ -1,4 +1,3 @@
-// src/components/Tools/StructureTool.jsx
 import { useState } from 'react';
 
 const SECTIONS = [
@@ -12,7 +11,7 @@ const SECTIONS = [
   { id: 'outro', label: 'Outro' },
   { id: 'drop', label: 'Drop' },
   { id: 'hook', label: 'Hook' },
-  { id: 'interlude', label': 'Interlude' },
+  { id: 'interlude', label: 'Interlude' },
   { id: 'fade-out', label: 'Fade out' }
 ];
 
