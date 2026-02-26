@@ -22,23 +22,23 @@ const App = () => {
   const [customTags, setCustomTags] = useState('');
   const output = generateFullOutput(selections, customTags);
 
-  const handleToggle = (category, tagLabel, multiple) => {
-    setSelections(prev => {
-      if (multiple) {
-        const current = prev[category] || [];
-        return {
-          ...prev,
-          [category]: current.includes(tagLabel)
-            ? current.filter(t => t !== tagLabel)
-            : [...current, tagLabel]
-        };
-      }
+const handleToggle = (category, tagLabel, multiple) => {
+  setSelections(prev => {
+    if (multiple) {
+      const current = Array.isArray(prev[category]) ? prev[category] : [];
       return {
         ...prev,
-        [category]: prev[category] === tagLabel ? null : tagLabel
+        [category]: current.includes(tagLabel)
+          ? current.filter(t => t !== tagLabel)
+          : [...current, tagLabel]
       };
-    });
-  };
+    }
+    return {
+      ...prev,
+      [category]: prev[category] === tagLabel ? null : tagLabel
+    };
+  });
+};
 
   const handleReset = () => {
     setSelections({ genre: null, moods: [], instruments: [], vocals: null, tempo: null, production: [] });
