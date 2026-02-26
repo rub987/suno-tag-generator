@@ -12,7 +12,7 @@ const App = () => {
   const { tags, loading, source, forceRefresh } = useTags();
   const [activeTab, setActiveTab] = useState('style');
   const [selections, setSelections] = useState({
-    genre: null,
+    genres: null,
     moods: [],
     instruments: [],
     vocals: null,
@@ -41,7 +41,7 @@ const handleToggle = (category, tagLabel, multiple) => {
 };
 
   const handleReset = () => {
-    setSelections({ genre: null, moods: [], instruments: [], vocals: null, tempo: null, production: [] });
+    setSelections({ genres: null, moods: [], instruments: [], vocals: null, tempo: null, production: [] });
     setCustomTags('');
   };
 

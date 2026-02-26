@@ -1,11 +1,9 @@
 export const generateFullOutput = (selections, customTags) => {
-  const { genre, moods, instruments, vocals, tempo, production } = selections;
-
-  console.log('selections:', selections); // debug temporaire
+  const { genres, moods, instruments, vocals, tempo, production } = selections;
 
   const parts = [];
 
-  if (genre) parts.push(genre);
+  if (genres) parts.push(genres);
   if (Array.isArray(moods) && moods.length) parts.push(...moods);
   if (tempo) parts.push(tempo);
   if (vocals) parts.push(vocals);
