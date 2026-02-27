@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import TagSelector from '../Form/TagSelector';
 import TagOutput from '../Output/TagOutput';
 
 const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange, onReset, output }) => {
+
+  const [generated, setGenerated] = useState(false);
 
   const totalSelected = [
     selections.genres ? 1 : 0,
@@ -16,6 +19,23 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
     if (totalSelected === 0 && !customTags) return '🎵 Sélectionne des tags pour commencer';
     if (totalSelected <= 2) return '🎶 Générer mon Style of Music';
     return '🚀 Générer mon Style of Music';
+  };
+
+  const handleGenerate = () => {
+    if (totalSelected === 0 && !customTags) return;
+    setGenerated(true);
+    // Scroll vers l'output
+    setTimeout(() => {
+      document.getElementById('output-section')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 100);
+  };
+
+  const handleReset = () => {
+    onReset();
+    setGenerated(false); // Cacher l'output au reset
   };
 
   return (
@@ -33,7 +53,10 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
               category={key}
               categoryData={categoryData}
               selected={selections[key]}
-              onToggle={onToggle}
+              onToggle={(cat, label, multiple) => {
+                setGenerated(false); // Reset output si on change les tags
+                onToggle(cat, label, multiple);
+              }}
             />
           </div>
         ))}
@@ -50,7 +73,10 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
           type="text"
           placeholder="Ex: ocean breeze, tropical, sunset vibes..."
           value={customTags}
-          onChange={e => onCustomTagsChange(e.target.value)}
+          onChange={e => {
+            onCustomTagsChange(e.target.value);
+            setGenerated(false); // Reset output si on change
+          }}
           className="w-full mt-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl
                      text-white placeholder-white/30 text-sm focus:outline-none
                      focus:border-brand-cyan/50 transition-colors"
@@ -60,6 +86,7 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
 
       {/* Generate Button */}
       <button
+        onClick={handleGenerate}
         disabled={totalSelected === 0 && !customTags}
         className={`mt-6 ${
           totalSelected === 0 && !customTags
@@ -78,14 +105,19 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
       {/* Reset */}
       {totalSelected > 0 && (
         <div className="mt-2 flex justify-end">
-          <button onClick={onReset} className="text-xs text-white/30 hover:text-white/60 transition-colors">
+          <button
+            onClick={handleReset}
+            className="text-xs text-white/30 hover:text-white/60 transition-colors"
+          >
             🗑️ Tout effacer
           </button>
         </div>
       )}
 
-      {/* Output */}
-      <TagOutput output={output} />
+      {/* Output - visible seulement après clic */}
+      <div id="output-section">
+        {generated && <TagOutput output={output} />}
+      </div>
 
       {/* Workflow */}
       <div className="glass-card p-5 mt-8">
@@ -127,4 +159,4 @@ const Tag = ({ children, color }) => (
   </span>
 );
 
-export default StyleTool;	
+export default StyleTool;
