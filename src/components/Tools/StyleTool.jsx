@@ -5,10 +5,12 @@ import Presets from '../Form/Presets';
 import History from '../Output/History';
 import { useHistory } from '../../hooks/useHistory';
 import { useLang } from '../../contexts/LangContext';
+import { generateRandomStyle } from '../../utils/randomStyle';
 
 const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange, onReset, onApplyPreset, activePresetId, output }) => {
 
   const [generated, setGenerated] = useState(false);
+  const [rolling, setRolling] = useState(false);
   const { history, addEntry, removeEntry, clearHistory } = useHistory();
   const { t } = useLang();
 
@@ -50,6 +52,21 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
     setGenerated(false);
   };
 
+  const handleRandom = () => {
+    const randomSelections = generateRandomStyle(tags);
+    if (!randomSelections) return;
+    setRolling(true);
+    setTimeout(() => setRolling(false), 600);
+    onApplyPreset({ id: null, selections: randomSelections });
+    setGenerated(true);
+    setTimeout(() => {
+      document.getElementById('output-section')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 150);
+  };
+
   return (
     <div>
       <div className="flex items-center gap-2 mb-6">
@@ -59,6 +76,25 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
 
       {/* Presets */}
       <Presets onApply={handleApplyPreset} activePresetId={activePresetId} />
+
+      {/* Random button */}
+      <button
+        onClick={handleRandom}
+        className="w-full mb-6 py-3 px-4 rounded-2xl border border-dashed border-white/20
+                   hover:border-brand-cyan/40 hover:bg-brand-cyan/5
+                   flex items-center justify-center gap-2 transition-all duration-200 group"
+      >
+        <span className={`text-lg transition-transform duration-300 ${rolling ? 'rotate-[360deg]' : 'group-hover:rotate-12'}`}
+              style={{ display: 'inline-block', transition: rolling ? 'transform 0.6s ease' : undefined }}>
+          🎲
+        </span>
+        <span className="text-sm font-semibold text-white/40 group-hover:text-white/70 transition-colors">
+          {t('style.random.btn')}
+        </span>
+        <span className="text-xs text-white/20 group-hover:text-white/40 transition-colors hidden sm:inline">
+          — {t('style.random.hint')}
+        </span>
+      </button>
 
       {/* Categories */}
       <div className="space-y-3">

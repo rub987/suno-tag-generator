@@ -18,6 +18,8 @@ export const translations = {
     // Style tool
     'style.title':          'Outil 1 — Génère ton style musical',
     'style.presets':        '⚡ Démarrage rapide',
+    'style.random.btn':     '🎲 Style aléatoire',
+    'style.random.hint':    'Génère une combinaison de tags au hasard',
     'style.custom.label':   'Tags personnalisés',
     'style.custom.opt':     '— Optionnel',
     'style.custom.ph':      'Ex: ocean breeze, tropical, sunset vibes...',
@@ -104,6 +106,8 @@ export const translations = {
     // Style tool
     'style.title':          'Tool 1 — Generate your music style',
     'style.presets':        '⚡ Quick start',
+    'style.random.btn':     '🎲 Random Style',
+    'style.random.hint':    'Generate a random tag combination',
     'style.custom.label':   'Custom tags',
     'style.custom.opt':     '— Optional',
     'style.custom.ph':      'Ex: ocean breeze, tropical, sunset vibes...',
