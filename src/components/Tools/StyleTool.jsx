@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import TagSelector from '../Form/TagSelector';
 import TagOutput from '../Output/TagOutput';
+import Presets from '../Form/Presets';
 
-const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange, onReset, output }) => {
+const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange, onReset, onApplyPreset, activePresetId, output }) => {
 
   const [generated, setGenerated] = useState(false);
 
@@ -38,12 +39,20 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
     setGenerated(false); // Cacher l'output au reset
   };
 
+  const handleApplyPreset = (preset) => {
+    onApplyPreset(preset);
+    setGenerated(false);
+  };
+
   return (
     <div>
       <div className="flex items-center gap-2 mb-6">
         <span className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse inline-block" />
         <h2 className="section-title">Outil 1 — Génère ton style musical</h2>
       </div>
+
+      {/* Presets */}
+      <Presets onApply={handleApplyPreset} activePresetId={activePresetId} />
 
       {/* Categories */}
       <div className="space-y-3">
@@ -54,7 +63,7 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
               categoryData={categoryData}
               selected={selections[key]}
               onToggle={(cat, label, multiple) => {
-                setGenerated(false); // Reset output si on change les tags
+                setGenerated(false);
                 onToggle(cat, label, multiple);
               }}
             />

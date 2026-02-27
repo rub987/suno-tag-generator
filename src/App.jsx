@@ -18,9 +18,17 @@ const App = () => {
     production: []
   });
   const [customTags, setCustomTags] = useState('');
+  const [activePresetId, setActivePresetId] = useState(null);
   const output = generateFullOutput(selections, customTags);
 
+  const handleApplyPreset = (preset) => {
+    setSelections(preset.selections);
+    setCustomTags('');
+    setActivePresetId(preset.id);
+  };
+
   const handleToggle = (category, tagLabel, multiple) => {
+    setActivePresetId(null);
     setSelections(prev => {
       if (multiple) {
         const current = Array.isArray(prev[category]) ? prev[category] : [];
@@ -41,6 +49,7 @@ const App = () => {
   const handleReset = () => {
     setSelections({ genres: null, moods: [], instruments: [], vocals: null, tempo: null, production: [] });
     setCustomTags('');
+    setActivePresetId(null);
   };
 
   if (loading) return (
@@ -145,6 +154,8 @@ const App = () => {
             onToggle={handleToggle}
             onCustomTagsChange={setCustomTags}
             onReset={handleReset}
+            onApplyPreset={handleApplyPreset}
+            activePresetId={activePresetId}
             output={output}
           />
         )}
