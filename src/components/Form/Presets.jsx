@@ -15,9 +15,15 @@ const Presets = ({ onApply, activePresetId }) => {
   const { t } = useLang();
   return (
     <div className="mb-6">
-      <p className="text-xs text-white/30 font-semibold uppercase tracking-widest mb-3">
-        {t('style.presets')}
-      </p>
+      <div className="flex items-center justify-between mb-3">
+        <p className="text-xs text-white/30 font-semibold uppercase tracking-widest">
+          {t('style.presets')}
+        </p>
+        <span className="flex items-center gap-1 text-xs text-white/20 italic">
+          {t('style.presets.scroll')}
+          <span className="animate-bounce-x inline-block">→</span>
+        </span>
+      </div>
       <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
         {PRESETS.map(preset => {
           const colors = colorMap[preset.color] || colorMap.cyan;

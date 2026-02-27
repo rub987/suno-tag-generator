@@ -17,6 +17,15 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
+      animation: {
+        'bounce-x': 'bounceX 1.2s ease-in-out infinite',
+      },
+      keyframes: {
+        bounceX: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%':      { transform: 'translateX(5px)' },
+        }
+      },
       backgroundImage: {
         'hero-gradient': 'radial-gradient(ellipse at top left, #2d1557 0%, #0d0618 50%, #1a0408 100%)',
         'card-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
