@@ -110,5 +110,173 @@ export const PRESETS = [
       tempo: 'Moderate',
       production: ['Psychedelic']
     }
+  },
+  {
+    id: 'rnb-soul',
+    name: 'R&B Soul',
+    emoji: '🎤',
+    color: 'orange',
+    selections: {
+      genres: 'Soul',
+      moods: ['Soulful', 'Romantic', 'Passionate'],
+      instruments: ['Piano', 'Bass Guitar'],
+      vocals: 'Female Vocals',
+      tempo: 'Moderate',
+      production: ['Warm', 'Polished']
+    }
+  },
+  {
+    id: 'afrobeats',
+    name: 'Afrobeats',
+    emoji: '🌍',
+    color: 'yellow',
+    selections: {
+      genres: 'Afrobeat',
+      moods: ['Energetic', 'Groovy', 'Happy'],
+      instruments: ['Drums'],
+      vocals: 'Male Vocals',
+      tempo: 'Upbeat',
+      production: ['Modern', 'Bright']
+    }
+  },
+  {
+    id: 'indie-folk',
+    name: 'Indie Folk',
+    emoji: '🪵',
+    color: 'cyan',
+    selections: {
+      genres: 'Folk',
+      moods: ['Nostalgic', 'Peaceful', 'Melancholic'],
+      instruments: ['Acoustic Guitar', 'Banjo'],
+      vocals: 'Male Vocals',
+      tempo: 'Slow',
+      production: ['Acoustic', 'Warm']
+    }
+  },
+  {
+    id: 'boom-bap',
+    name: 'Boom Bap',
+    emoji: '🎙️',
+    color: 'red',
+    selections: {
+      genres: 'Boom Bap',
+      moods: ['Energetic', 'Powerful', 'Motivational'],
+      instruments: ['808', 'Drums'],
+      vocals: 'Rap Vocals',
+      tempo: 'Medium Tempo',
+      production: ['Raw', 'Vintage']
+    }
+  },
+  {
+    id: 'latin-vibes',
+    name: 'Latin Vibes',
+    emoji: '🌴',
+    color: 'magenta',
+    selections: {
+      genres: 'Reggaeton',
+      moods: ['Passionate', 'Energetic', 'Playful'],
+      instruments: ['Drums'],
+      vocals: 'Female Vocals',
+      tempo: 'Fast',
+      production: ['Modern', 'Polished']
+    }
+  },
+  {
+    id: 'edm-banger',
+    name: 'EDM Banger',
+    emoji: '⚡',
+    color: 'blue',
+    selections: {
+      genres: 'EDM',
+      moods: ['Euphoric', 'Energetic', 'Uplifting'],
+      instruments: ['Synthesizer'],
+      vocals: 'Female Vocals',
+      tempo: 'Very Fast',
+      production: ['Modern', 'Bright']
+    }
+  },
+  {
+    id: 'meditation',
+    name: 'Meditation',
+    emoji: '🧘',
+    color: 'purple',
+    selections: {
+      genres: 'Chillwave',
+      moods: ['Peaceful', 'Spiritual', 'Calm'],
+      instruments: ['Piano', 'Flute'],
+      vocals: 'No Vocals',
+      tempo: 'Very Slow',
+      production: ['Minimalist', 'Warm']
+    }
+  },
+  {
+    id: 'funk-groove',
+    name: 'Funk Groove',
+    emoji: '🕺',
+    color: 'orange',
+    selections: {
+      genres: 'Funk',
+      moods: ['Groovy', 'Happy', 'Energetic'],
+      instruments: ['Bass Guitar', 'Drums'],
+      vocals: 'Male Vocals',
+      tempo: 'Upbeat',
+      production: ['Vintage', 'Warm']
+    }
+  },
+  {
+    id: 'country-roads',
+    name: 'Country Roads',
+    emoji: '🤠',
+    color: 'yellow',
+    selections: {
+      genres: 'Country',
+      moods: ['Nostalgic', 'Peaceful', 'Soulful'],
+      instruments: ['Acoustic Guitar', 'Banjo'],
+      vocals: 'Male Vocals',
+      tempo: 'Moderate',
+      production: ['Acoustic', 'Warm']
+    }
+  },
+  {
+    id: 'bossa-nova',
+    name: 'Bossa Nova',
+    emoji: '🌊',
+    color: 'cyan',
+    selections: {
+      genres: 'Bossa Nova',
+      moods: ['Relaxing', 'Romantic', 'Dreamy'],
+      instruments: ['Acoustic Guitar', 'Piano'],
+      vocals: 'Female Vocals',
+      tempo: 'Slow',
+      production: ['Warm', 'Vintage']
+    }
+  },
+  {
+    id: 'kpop-banger',
+    name: 'K-Pop',
+    emoji: '💫',
+    color: 'magenta',
+    selections: {
+      genres: 'K-Pop',
+      moods: ['Euphoric', 'Energetic', 'Playful'],
+      instruments: ['Synthesizer'],
+      vocals: 'Female Vocals',
+      tempo: 'Fast',
+      production: ['Polished', 'Modern']
+    }
+  },
+  {
+    id: 'blues-guitar',
+    name: 'Blues Guitar',
+    emoji: '🎸',
+    color: 'blue',
+    selections: {
+      genres: 'Blues',
+      moods: ['Soulful', 'Melancholic', 'Passionate'],
+      instruments: ['Electric Guitar'],
+      vocals: 'Male Vocals',
+      tempo: 'Moderate',
+      production: ['Raw', 'Warm']
+    }
   }
 ];
