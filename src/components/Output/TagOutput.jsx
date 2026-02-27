@@ -53,6 +53,20 @@ const TagOutput = ({ output, onSave }) => {
     setDragOverIndex(null);
   };
 
+  const moveUp = (index) => {
+    if (index === 0) return;
+    const newTags = [...orderedTags];
+    [newTags[index - 1], newTags[index]] = [newTags[index], newTags[index - 1]];
+    setOrderedTags(newTags);
+  };
+
+  const moveDown = (index) => {
+    if (index === orderedTags.length - 1) return;
+    const newTags = [...orderedTags];
+    [newTags[index + 1], newTags[index]] = [newTags[index], newTags[index + 1]];
+    setOrderedTags(newTags);
+  };
+
   if (!output.style) return (
     <div className="mt-6 rounded-2xl border-2 border-dashed border-white/10 p-10 text-center">
       <p className="text-4xl mb-3">🎵</p>
@@ -118,7 +132,7 @@ const TagOutput = ({ output, onSave }) => {
               onDragOver={(e) => handleDragOver(e, index)}
               onDrop={(e) => handleDrop(e, index)}
               onDragEnd={handleDragEnd}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-mono
+              className={`flex items-center gap-1.5 px-2 md:px-3 py-1.5 rounded-xl text-sm font-mono
                           cursor-grab active:cursor-grabbing select-none transition-all duration-150
                           ${dragOverIndex === index
                             ? 'scale-105 ring-1 ring-white/40 brightness-125'
@@ -129,7 +143,27 @@ const TagOutput = ({ output, onSave }) => {
                             : 'bg-white/8 border border-white/10 text-white/70'
                           }`}
             >
-              <span className="text-white/20 text-xs">⠿</span>
+              {/* Flèches ↑↓ — mobile uniquement */}
+              <div className="flex flex-col gap-px md:hidden" onClick={e => e.stopPropagation()}>
+                <button
+                  onPointerDown={e => { e.stopPropagation(); moveUp(index); }}
+                  disabled={index === 0}
+                  className="text-[9px] leading-none px-0.5 py-px rounded
+                             text-white/40 hover:text-white/80 disabled:opacity-20
+                             disabled:cursor-not-allowed active:scale-110 touch-manipulation"
+                >▲</button>
+                <button
+                  onPointerDown={e => { e.stopPropagation(); moveDown(index); }}
+                  disabled={index === orderedTags.length - 1}
+                  className="text-[9px] leading-none px-0.5 py-px rounded
+                             text-white/40 hover:text-white/80 disabled:opacity-20
+                             disabled:cursor-not-allowed active:scale-110 touch-manipulation"
+                >▼</button>
+              </div>
+
+              {/* Poignée drag — desktop uniquement */}
+              <span className="hidden md:inline text-white/20 text-xs">⠿</span>
+
               {index === 0 && (
                 <span className="text-[10px] text-brand-cyan font-bold">★</span>
               )}
@@ -142,11 +176,12 @@ const TagOutput = ({ output, onSave }) => {
         </p>
       </div>
 
-      {/* Drag hint */}
+      {/* Reorder hint */}
       <div className="bg-brand-cyan/5 border-t border-brand-cyan/10 px-5 py-2">
         <p className="text-xs text-white/30">
-          {t('output.drag')}{' '}
-          <span className="text-brand-cyan/50">{t('output.priority')}</span>
+          <span className="hidden md:inline">{t('output.drag')}</span>
+          <span className="md:hidden">{t('output.drag.mobile')}</span>
+          {' '}<span className="text-brand-cyan/50">{t('output.priority')}</span>
         </p>
       </div>
 
