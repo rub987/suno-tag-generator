@@ -21,9 +21,7 @@ const StructureTool = () => {
 
   const toggle = (id) => {
     setSelected(prev =>
-      prev.includes(id)
-        ? prev.filter(s => s !== id)
-        : [...prev, id]
+      prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id]
     );
   };
 
@@ -40,14 +38,12 @@ const StructureTool = () => {
   return (
     <div>
       <div className="flex items-center gap-2 mb-6">
-        <span className="w-3 h-3 rounded-full bg-teal-500 inline-block" />
-        <h2 className="font-bold text-gray-700 tracking-wide uppercase text-sm">
-          Outil 2 — Structure des paroles
-        </h2>
+        <span className="w-2 h-2 rounded-full bg-brand-magenta animate-pulse inline-block" />
+        <h2 className="section-title">Outil 2 — Structure des paroles</h2>
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
-        <p className="text-sm text-gray-500 mb-4">
+      <div className="glass-card p-5">
+        <p className="text-sm text-white/40 mb-4">
           Sélectionne les sections dans l'ordre souhaité
         </p>
         <div className="flex flex-wrap gap-2">
@@ -57,8 +53,8 @@ const StructureTool = () => {
               onClick={() => toggle(section.id)}
               className={`px-4 py-2 rounded-full border text-sm font-medium transition-all ${
                 selected.includes(section.id)
-                  ? 'bg-teal-500 border-teal-500 text-white'
-                  : 'border-gray-300 text-gray-600 hover:border-teal-300'
+                  ? 'bg-brand-magenta/20 border-brand-magenta/50 text-brand-magenta shadow-lg shadow-brand-magenta/20'
+                  : 'border-white/20 bg-white/5 text-white/60 hover:border-brand-magenta/30 hover:text-white'
               }`}
             >
               {section.label}
@@ -68,28 +64,30 @@ const StructureTool = () => {
       </div>
 
       {output && (
-        <div className="mt-6 rounded-xl border border-gray-200 overflow-hidden">
-          <div className="bg-gray-50 px-4 py-3 flex items-center justify-between border-b border-gray-200">
-            <span className="font-semibold text-gray-700 text-sm">📝 Structure Lyrics</span>
+        <div className="mt-6 rounded-2xl border border-brand-magenta/30 overflow-hidden
+                        shadow-xl shadow-brand-magenta/10">
+          <div className="bg-brand-magenta/10 px-5 py-3 flex items-center justify-between
+                          border-b border-brand-magenta/20">
+            <span className="font-bold text-brand-magenta text-sm">📝 Structure Lyrics</span>
             <button
               onClick={handleCopy}
-              className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all ${
+              className={`px-4 py-1.5 rounded-xl text-sm font-bold transition-all ${
                 copied
-                  ? 'bg-green-500 text-white'
-                  : 'bg-teal-500 hover:bg-teal-600 text-white'
+                  ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                  : 'bg-brand-magenta/20 hover:bg-brand-magenta/30 text-brand-magenta border border-brand-magenta/30'
               }`}
             >
               {copied ? '✅ Copié !' : '📋 Copier'}
             </button>
           </div>
-          <div className="bg-white p-4">
-            <pre className="font-mono text-teal-700 text-sm whitespace-pre-wrap">
+          <div className="bg-black/30 p-5">
+            <pre className="font-mono text-brand-magenta text-sm whitespace-pre-wrap">
               {output}
             </pre>
           </div>
-          <div className="bg-gray-50 border-t border-gray-200 px-4 py-2">
-            <p className="text-xs text-gray-400">
-              💡 Colle ce texte dans le champ <strong>"Lyrics"</strong> sur Suno AI
+          <div className="bg-white/5 border-t border-white/10 px-5 py-3">
+            <p className="text-xs text-white/30">
+              💡 Colle dans <strong className="text-brand-magenta/70">"Lyrics"</strong> sur Suno AI
             </p>
           </div>
         </div>

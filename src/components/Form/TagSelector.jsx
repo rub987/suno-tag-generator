@@ -10,24 +10,23 @@ const TagSelector = ({ category, categoryData, selected, onToggle }) => {
 
   const isSelected = (tagLabel) => {
     if (!selected) return false;
-    if (categoryData.multiple) {
-      return Array.isArray(selected) && selected.includes(tagLabel);
-    }
+    if (categoryData.multiple) return Array.isArray(selected) && selected.includes(tagLabel);
     return selected === tagLabel;
   };
 
   return (
     <div>
       <div className="flex items-center justify-between mb-3">
-        <label className="font-semibold text-gray-700 text-sm flex items-center gap-2">
+        <label className="font-semibold text-sm flex items-center gap-2">
           <span>{categoryData.emoji}</span>
-          <span>{categoryData.label}</span>
-          <span className="font-normal text-gray-400 text-xs">
+          <span className="text-brand-cyan">{categoryData.label}</span>
+          <span className="font-normal text-white/30 text-xs">
             — {categoryData.multiple ? 'Plusieurs choix' : '1 seul choix'}
           </span>
         </label>
         {categoryData.multiple && Array.isArray(selected) && selected.length > 0 && (
-          <span className="text-xs text-teal-600 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded-full">
+          <span className="text-xs text-brand-cyan bg-brand-cyan/10 border border-brand-cyan/20
+                           px-2 py-0.5 rounded-full">
             {selected.length} sélectionné(s)
           </span>
         )}
@@ -39,9 +38,9 @@ const TagSelector = ({ category, categoryData, selected, onToggle }) => {
           placeholder="Rechercher..."
           value={search}
           onChange={e => setSearch(e.target.value)}
-          className="w-full mb-3 px-3 py-1.5 border border-gray-200 rounded-lg
-                     text-sm text-gray-700 placeholder-gray-400
-                     focus:outline-none focus:border-teal-400 transition-colors"
+          className="w-full mb-3 px-3 py-2 bg-white/5 border border-white/10 rounded-xl
+                     text-sm text-white placeholder-white/30
+                     focus:outline-none focus:border-brand-cyan/50 transition-colors"
         />
       )}
 
@@ -50,18 +49,22 @@ const TagSelector = ({ category, categoryData, selected, onToggle }) => {
           <button
             key={tag.id}
             onClick={() => onToggle(category, tag.label, categoryData.multiple)}
-            className={`px-3 py-1.5 rounded-full border text-sm transition-all ${
+            className={`tag-chip ${
               isSelected(tag.label)
-                ? 'bg-teal-500 border-teal-500 text-white font-medium shadow-sm'
+                ? 'tag-chip-selected'
                 : tag.confidence === 'medium'
-                  ? 'border-yellow-300 bg-yellow-50 text-yellow-700 hover:border-yellow-400'
-                  : 'border-gray-300 text-gray-600 bg-white hover:border-teal-300 hover:text-teal-600'
+                  ? 'tag-chip-medium'
+                  : 'tag-chip-default'
             }`}
           >
             {tag.label}
           </button>
         ))}
       </div>
+
+      {filtered.length === 0 && (
+        <p className="text-white/30 text-sm italic">Aucun tag trouvé</p>
+      )}
     </div>
   );
 };
