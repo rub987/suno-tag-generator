@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-const TagOutput = ({ output }) => {
+const TagOutput = ({ output, onSave }) => {
   const [copied, setCopied] = useState(false);
   const [orderedTags, setOrderedTags] = useState([]);
   const [dragOverIndex, setDragOverIndex] = useState(null);
@@ -20,6 +20,7 @@ const TagOutput = ({ output }) => {
   const handleCopy = async () => {
     await navigator.clipboard.writeText(orderedStyle);
     setCopied(true);
+    onSave?.(orderedStyle, output.tagCount, output.charCount);
     setTimeout(() => setCopied(false), 2000);
   };
 

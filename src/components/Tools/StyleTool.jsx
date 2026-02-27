@@ -2,10 +2,13 @@ import { useState } from 'react';
 import TagSelector from '../Form/TagSelector';
 import TagOutput from '../Output/TagOutput';
 import Presets from '../Form/Presets';
+import History from '../Output/History';
+import { useHistory } from '../../hooks/useHistory';
 
 const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange, onReset, onApplyPreset, activePresetId, output }) => {
 
   const [generated, setGenerated] = useState(false);
+  const { history, addEntry, removeEntry, clearHistory } = useHistory();
 
   const totalSelected = [
     selections.genres ? 1 : 0,
@@ -125,8 +128,11 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
 
       {/* Output - visible seulement après clic */}
       <div id="output-section">
-        {generated && <TagOutput output={output} />}
+        {generated && <TagOutput output={output} onSave={addEntry} />}
       </div>
+
+      {/* History */}
+      <History history={history} onRemove={removeEntry} onClear={clearHistory} />
 
       {/* Workflow */}
       <div className="glass-card p-5 mt-8">
