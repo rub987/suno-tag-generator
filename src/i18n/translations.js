@@ -81,6 +81,8 @@ export const translations = {
     'cat.vocals':           'Voix',
     'cat.tempo':            'Tempo',
     'cat.production':       'Style de Production',
+    'cat.effects':          'Effets Audio',
+    'cat.soundfx':          "Sons d'Ambiance",
   },
 
   en: {
@@ -165,5 +167,7 @@ export const translations = {
     'cat.vocals':           'Vocals',
     'cat.tempo':            'Tempo',
     'cat.production':       'Production Style',
+    'cat.effects':          'Audio Effects',
+    'cat.soundfx':          'Ambient Sounds',
   }
 };

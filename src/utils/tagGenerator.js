@@ -1,5 +1,5 @@
 export const generateFullOutput = (selections, customTags) => {
-  const { genres, moods, instruments, vocals, tempo, production } = selections;
+  const { genres, moods, instruments, vocals, tempo, production, effects, soundfx } = selections;
 
   const parts = [];
 
@@ -9,6 +9,8 @@ export const generateFullOutput = (selections, customTags) => {
   if (vocals) parts.push(vocals);
   if (Array.isArray(instruments) && instruments.length) parts.push(...instruments);
   if (Array.isArray(production) && production.length) parts.push(...production);
+  if (Array.isArray(effects) && effects.length) parts.push(...effects);
+  if (Array.isArray(soundfx) && soundfx.length) parts.push(...soundfx);
 
   const customClean = customTags
     ?.split(',')

@@ -18,7 +18,9 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
     (selections.instruments?.length || 0),
     selections.vocals ? 1 : 0,
     selections.tempo ? 1 : 0,
-    (selections.production?.length || 0)
+    (selections.production?.length || 0),
+    (selections.effects?.length || 0),
+    (selections.soundfx?.length || 0)
   ].reduce((a, b) => a + b, 0);
 
   const getButtonLabel = () => {

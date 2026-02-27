@@ -323,6 +323,60 @@
         { "id": "acoustic", "label": "Acoustic", "confidence": "high" },
         { "id": "cinematic", "label": "Cinematic", "confidence": "high" }
       ]
+    },
+    "effects": {
+      "label": "Effets Audio",
+      "emoji": "🎛️",
+      "multiple": true,
+      "tags": [
+        { "id": "reverb", "label": "Reverb", "confidence": "high" },
+        { "id": "heavy-reverb", "label": "Heavy Reverb", "confidence": "high" },
+        { "id": "hall-reverb", "label": "Hall Reverb", "confidence": "high" },
+        { "id": "cathedral-reverb", "label": "Cathedral Reverb", "confidence": "high" },
+        { "id": "no-reverb", "label": "No Reverb", "confidence": "high" },
+        { "id": "wide-stereo", "label": "Wide Stereo", "confidence": "high" },
+        { "id": "spacious", "label": "Spacious", "confidence": "high" },
+        { "id": "intimate", "label": "Intimate", "confidence": "high" },
+        { "id": "dry", "label": "Dry", "confidence": "high" },
+        { "id": "vinyl-crackle", "label": "Vinyl Crackle", "confidence": "high" },
+        { "id": "tape-saturation", "label": "Tape Saturation", "confidence": "high" },
+        { "id": "analog-warmth", "label": "Analog Warmth", "confidence": "high" },
+        { "id": "distorted", "label": "Distorted", "confidence": "high" },
+        { "id": "heavy-distortion", "label": "Heavy Distortion", "confidence": "high" },
+        { "id": "glitchy", "label": "Glitchy", "confidence": "high" },
+        { "id": "compressed", "label": "Compressed", "confidence": "high" },
+        { "id": "punchy", "label": "Punchy", "confidence": "high" },
+        { "id": "crisp", "label": "Crisp", "confidence": "high" },
+        { "id": "crescendo", "label": "Crescendo", "confidence": "high" },
+        { "id": "fade-in", "label": "Fade In", "confidence": "high" },
+        { "id": "fade-out", "label": "Fade Out", "confidence": "high" },
+        { "id": "record-scratch", "label": "Record Scratch", "confidence": "medium" },
+        { "id": "static", "label": "Static", "confidence": "medium" },
+        { "id": "phaser", "label": "Phaser", "confidence": "medium" },
+        { "id": "flanger", "label": "Flanger", "confidence": "medium" }
+      ]
+    },
+    "soundfx": {
+      "label": "Sons d'Ambiance",
+      "emoji": "🌊",
+      "multiple": true,
+      "tags": [
+        { "id": "rain", "label": "Rain", "confidence": "high" },
+        { "id": "thunder", "label": "Thunder", "confidence": "high" },
+        { "id": "ocean-waves", "label": "Ocean Waves", "confidence": "high" },
+        { "id": "wind", "label": "Wind", "confidence": "high" },
+        { "id": "fire-crackling", "label": "Fire Crackling", "confidence": "high" },
+        { "id": "birds-chirping", "label": "Birds Chirping", "confidence": "high" },
+        { "id": "forest-ambience", "label": "Forest Ambience", "confidence": "high" },
+        { "id": "city-ambience", "label": "City Ambience", "confidence": "high" },
+        { "id": "crowd-noise", "label": "Crowd Noise", "confidence": "high" },
+        { "id": "applause", "label": "Applause", "confidence": "high" },
+        { "id": "cheering", "label": "Cheering", "confidence": "high" },
+        { "id": "clapping", "label": "Clapping", "confidence": "high" },
+        { "id": "whistling", "label": "Whistling", "confidence": "medium" },
+        { "id": "church-bells", "label": "Church Bells", "confidence": "medium" },
+        { "id": "clock-ticking", "label": "Clock Ticking", "confidence": "medium" }
+      ]
     }
   }
 }

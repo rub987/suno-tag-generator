@@ -17,14 +17,20 @@ const AppInner = () => {
     instruments: [],
     vocals: null,
     tempo: null,
-    production: []
+    production: [],
+    effects: [],
+    soundfx: []
   });
   const [customTags, setCustomTags] = useState('');
   const [activePresetId, setActivePresetId] = useState(null);
   const output = generateFullOutput(selections, customTags);
 
   const handleApplyPreset = (preset) => {
-    setSelections(preset.selections);
+    setSelections({
+      genres: null, moods: [], instruments: [], vocals: null,
+      tempo: null, production: [], effects: [], soundfx: [],
+      ...preset.selections
+    });
     setCustomTags('');
     setActivePresetId(preset.id);
   };
@@ -49,7 +55,7 @@ const AppInner = () => {
   };
 
   const handleReset = () => {
-    setSelections({ genres: null, moods: [], instruments: [], vocals: null, tempo: null, production: [] });
+    setSelections({ genres: null, moods: [], instruments: [], vocals: null, tempo: null, production: [], effects: [], soundfx: [] });
     setCustomTags('');
     setActivePresetId(null);
   };
