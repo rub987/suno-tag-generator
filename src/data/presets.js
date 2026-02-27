@@ -278,5 +278,65 @@ export const PRESETS = [
       tempo: 'Moderate',
       production: ['Raw', 'Warm']
     }
+  },
+  {
+    id: 'reggae-tahitien',
+    name: 'Reggae Tahitien',
+    emoji: '🌺',
+    color: 'cyan',
+    selections: {
+      genres: 'Pacific Reggae',
+      moods: ['Relaxing', 'Peaceful', 'Soulful'],
+      instruments: ['Guitar', 'Ukulele'],
+      vocals: 'Male Vocals',
+      tempo: 'Moderate',
+      production: ['Warm', 'Acoustic']
+    },
+    customTags: 'tahitian, polynesian'
+  },
+  {
+    id: 'valse-tahitienne',
+    name: 'Valse Tahitienne',
+    emoji: '💃',
+    color: 'magenta',
+    selections: {
+      genres: 'Chanson',
+      moods: ['Romantic', 'Dreamy', 'Nostalgic'],
+      instruments: ['Acoustic Guitar', 'Ukulele'],
+      vocals: 'Female Vocals',
+      tempo: 'Moderate',
+      production: ['Acoustic', 'Warm']
+    },
+    customTags: 'tahitian waltz, polynesian, tropical'
+  },
+  {
+    id: 'zouk-tahitien',
+    name: 'Zouk Tahitien',
+    emoji: '🌸',
+    color: 'purple',
+    selections: {
+      genres: 'Dance',
+      moods: ['Romantic', 'Passionate', 'Dreamy'],
+      instruments: ['Acoustic Guitar'],
+      vocals: 'Female Vocals',
+      tempo: 'Slow',
+      production: ['Warm', 'Polished']
+    },
+    customTags: 'zouk tahitien, polynesian, tropical'
+  },
+  {
+    id: 'rock-tahitien',
+    name: 'Rock Tahitien',
+    emoji: '🏝️',
+    color: 'red',
+    selections: {
+      genres: 'Rock',
+      moods: ['Energetic', 'Passionate', 'Powerful'],
+      instruments: ['Electric Guitar', 'Drums'],
+      vocals: 'Male Vocals',
+      tempo: 'Upbeat',
+      production: ['Raw', 'Modern']
+    },
+    customTags: 'tahitian rock, polynesian'
   }
 ];

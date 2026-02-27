@@ -31,7 +31,7 @@ const AppInner = () => {
       tempo: null, production: [], effects: [], soundfx: [],
       ...preset.selections
     });
-    setCustomTags('');
+    setCustomTags(preset.customTags || '');
     setActivePresetId(preset.id);
   };
 
