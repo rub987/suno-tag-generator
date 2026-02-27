@@ -6,7 +6,7 @@ const Header = ({ onRefresh }) => (
         <span className="text-2xl">🎵</span>
         <div>
           <h1 className="text-xl font-bold leading-tight">Suno Tag Creator</h1>
-          <p className="text-teal-100 text-xs">Te Hotu Mana — L'outil des musiciens de Polynésie</p>
+          <p className="text-teal-100 text-xs">AI REDSOYU TOOL — AI music</p>
         </div>
       </div>
       <button
