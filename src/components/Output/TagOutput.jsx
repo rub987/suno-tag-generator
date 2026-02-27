@@ -1,12 +1,54 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const TagOutput = ({ output }) => {
   const [copied, setCopied] = useState(false);
+  const [orderedTags, setOrderedTags] = useState([]);
+  const [dragOverIndex, setDragOverIndex] = useState(null);
+  const dragIndex = useRef(null);
+
+  // Sync with output when selections change
+  useEffect(() => {
+    if (output.style) {
+      setOrderedTags(output.style.split(', ').filter(Boolean));
+    } else {
+      setOrderedTags([]);
+    }
+  }, [output.style]);
+
+  const orderedStyle = orderedTags.join(', ');
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(output.style);
+    await navigator.clipboard.writeText(orderedStyle);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleDragStart = (index) => {
+    dragIndex.current = index;
+  };
+
+  const handleDragOver = (e, index) => {
+    e.preventDefault();
+    if (dragIndex.current !== index) setDragOverIndex(index);
+  };
+
+  const handleDrop = (e, dropIndex) => {
+    e.preventDefault();
+    if (dragIndex.current === null || dragIndex.current === dropIndex) {
+      setDragOverIndex(null);
+      return;
+    }
+    const newTags = [...orderedTags];
+    const [moved] = newTags.splice(dragIndex.current, 1);
+    newTags.splice(dropIndex, 0, moved);
+    setOrderedTags(newTags);
+    dragIndex.current = null;
+    setDragOverIndex(null);
+  };
+
+  const handleDragEnd = () => {
+    dragIndex.current = null;
+    setDragOverIndex(null);
   };
 
   if (!output.style) return (
@@ -63,10 +105,48 @@ const TagOutput = ({ output }) => {
         </div>
       </div>
 
-      {/* Output text */}
+      {/* Draggable tags */}
       <div className="bg-black/30 p-5">
-        <p className="font-mono text-brand-cyan leading-relaxed break-words text-base">
-          {output.style}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {orderedTags.map((tag, index) => (
+            <div
+              key={`${tag}-${index}`}
+              draggable
+              onDragStart={() => handleDragStart(index)}
+              onDragOver={(e) => handleDragOver(e, index)}
+              onDrop={(e) => handleDrop(e, index)}
+              onDragEnd={handleDragEnd}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-mono
+                          cursor-grab active:cursor-grabbing select-none transition-all duration-150
+                          ${dragOverIndex === index
+                            ? 'scale-105 ring-1 ring-white/40 brightness-125'
+                            : 'hover:brightness-110'
+                          }
+                          ${index === 0
+                            ? 'bg-brand-cyan/20 border border-brand-cyan/40 text-brand-cyan'
+                            : 'bg-white/8 border border-white/10 text-white/70'
+                          }`}
+            >
+              <span className="text-white/20 text-xs">⠿</span>
+              {index === 0 && (
+                <span className="text-[10px] text-brand-cyan font-bold">★</span>
+              )}
+              {tag}
+            </div>
+          ))}
+        </div>
+
+        {/* Raw string preview */}
+        <p className="font-mono text-white/20 text-xs leading-relaxed break-all">
+          {orderedStyle}
+        </p>
+      </div>
+
+      {/* Drag hint */}
+      <div className="bg-brand-cyan/5 border-t border-brand-cyan/10 px-5 py-2">
+        <p className="text-xs text-white/30">
+          ↕ Glisse les tags pour changer l'ordre ·{' '}
+          <span className="text-brand-cyan/50">★ 1er tag = priorité maximale</span>
         </p>
       </div>
 
