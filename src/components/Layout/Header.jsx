@@ -8,23 +8,11 @@ const Header = ({ onRefresh }) => {
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-blue to-brand-cyan
-                          flex items-center justify-center text-lg shadow-lg shadow-brand-cyan/20">
-            🎵
-          </div>
-          <div>
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-lg font-black text-white tracking-tight">SUNO</span>
-              <span className="text-lg font-black bg-gradient-to-r from-brand-cyan to-brand-blue
-                               bg-clip-text text-transparent tracking-tight">TAG</span>
-              <span className="text-xs font-bold text-white/40 ml-1">AI</span>
-            </div>
-            <p className="text-xs text-white/40 leading-none">
-              by <span className="text-brand-cyan/70">REDSOYU AI</span>
-            </p>
-          </div>
-        </div>
+        <img
+          src="/logo.svg"
+          alt="REDSOYU AI"
+          className="h-9 w-auto"
+        />
 
         {/* Actions */}
         <div className="flex items-center gap-3">
