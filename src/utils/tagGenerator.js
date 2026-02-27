@@ -18,13 +18,19 @@ export const generateFullOutput = (selections, customTags) => {
   const allTags = [...parts, ...customClean];
   const style = allTags.join(', ');
 
+  const charCount = style.length;
+  const limit = 1000;
+
   return {
     style,
-    charCount: style.length,
+    charCount,
     tagCount: allTags.length,
-    isValid: style.length <= 200,
-    warning: style.length > 180
-      ? 'Attention : proche de la limite de 200 caractères Suno'
+    limit,
+    isValid: charCount <= limit,
+    warning: charCount > limit
+      ? `Trop long : ${charCount - limit} caractères en trop`
+      : charCount > 900
+      ? 'Attention : proche de la limite de 1000 caractères'
       : null
   };
 };

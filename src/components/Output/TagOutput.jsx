@@ -21,29 +21,46 @@ const TagOutput = ({ output }) => {
                     shadow-xl shadow-brand-cyan/10">
 
       {/* Header */}
-      <div className="bg-brand-cyan/10 px-5 py-3 flex items-center justify-between
-                      border-b border-brand-cyan/20">
-        <div className="flex items-center gap-3">
-          <span className="font-bold text-brand-cyan text-sm">🎯 Style of Music</span>
-          <span className={`text-xs px-2 py-0.5 rounded-full font-mono border ${
-            output.isValid
-              ? 'bg-green-500/10 text-green-400 border-green-500/20'
-              : 'bg-red-500/10 text-red-400 border-red-500/20'
-          }`}>
-            {output.charCount}/200
-          </span>
-          <span className="text-xs text-white/30">{output.tagCount} tags</span>
+      <div className="bg-brand-cyan/10 px-5 py-3 border-b border-brand-cyan/20">
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center gap-3">
+            <span className="font-bold text-brand-cyan text-sm">🎯 Style of Music</span>
+            <span className={`text-xs px-2 py-0.5 rounded-full font-mono border ${
+              !output.isValid
+                ? 'bg-red-500/10 text-red-400 border-red-500/20'
+                : output.charCount > 900
+                ? 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20'
+                : 'bg-green-500/10 text-green-400 border-green-500/20'
+            }`}>
+              {output.charCount}/{output.limit}
+            </span>
+            <span className="text-xs text-white/30">{output.tagCount} tags</span>
+          </div>
+          <button
+            onClick={handleCopy}
+            className={`px-4 py-1.5 rounded-xl text-sm font-bold transition-all ${
+              copied
+                ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                : 'bg-brand-cyan/20 hover:bg-brand-cyan/30 text-brand-cyan border border-brand-cyan/30'
+            }`}
+          >
+            {copied ? '✅ Copié !' : '📋 Copier'}
+          </button>
         </div>
-        <button
-          onClick={handleCopy}
-          className={`px-4 py-1.5 rounded-xl text-sm font-bold transition-all ${
-            copied
-              ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-              : 'bg-brand-cyan/20 hover:bg-brand-cyan/30 text-brand-cyan border border-brand-cyan/30'
-          }`}
-        >
-          {copied ? '✅ Copié !' : '📋 Copier'}
-        </button>
+
+        {/* Progress bar */}
+        <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+          <div
+            className={`h-full rounded-full transition-all duration-300 ${
+              !output.isValid
+                ? 'bg-red-500'
+                : output.charCount > 900
+                ? 'bg-yellow-400'
+                : 'bg-brand-cyan'
+            }`}
+            style={{ width: `${Math.min((output.charCount / output.limit) * 100, 100)}%` }}
+          />
+        </div>
       </div>
 
       {/* Output text */}
