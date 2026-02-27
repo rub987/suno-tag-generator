@@ -1,4 +1,5 @@
 import { PRESETS } from '../../data/presets';
+import { useLang } from '../../contexts/LangContext';
 
 const colorMap = {
   cyan:    { card: 'border-brand-cyan/30 hover:border-brand-cyan/60 hover:bg-brand-cyan/5',    badge: 'bg-brand-cyan/10 text-brand-cyan' },
@@ -11,10 +12,11 @@ const colorMap = {
 };
 
 const Presets = ({ onApply, activePresetId }) => {
+  const { t } = useLang();
   return (
     <div className="mb-6">
       <p className="text-xs text-white/30 font-semibold uppercase tracking-widest mb-3">
-        ⚡ Démarrage rapide
+        {t('style.presets')}
       </p>
       <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
         {PRESETS.map(preset => {

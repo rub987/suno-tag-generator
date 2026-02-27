@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLang } from '../../contexts/LangContext';
 
 const TagOutput = ({ output, onSave }) => {
   const [copied, setCopied] = useState(false);
   const [orderedTags, setOrderedTags] = useState([]);
   const [dragOverIndex, setDragOverIndex] = useState(null);
   const dragIndex = useRef(null);
+  const { t } = useLang();
 
-  // Sync with output when selections change
   useEffect(() => {
     if (output.style) {
       setOrderedTags(output.style.split(', ').filter(Boolean));
@@ -55,7 +56,7 @@ const TagOutput = ({ output, onSave }) => {
   if (!output.style) return (
     <div className="mt-6 rounded-2xl border-2 border-dashed border-white/10 p-10 text-center">
       <p className="text-4xl mb-3">🎵</p>
-      <p className="text-white/30 text-sm">Sélectionne des tags pour générer ton style</p>
+      <p className="text-white/30 text-sm">{t('output.empty')}</p>
     </div>
   );
 
@@ -77,7 +78,7 @@ const TagOutput = ({ output, onSave }) => {
             }`}>
               {output.charCount}/{output.limit}
             </span>
-            <span className="text-xs text-white/30">{output.tagCount} tags</span>
+            <span className="text-xs text-white/30">{output.tagCount} {t('output.tags')}</span>
           </div>
           <button
             onClick={handleCopy}
@@ -87,7 +88,7 @@ const TagOutput = ({ output, onSave }) => {
                 : 'bg-brand-cyan/20 hover:bg-brand-cyan/30 text-brand-cyan border border-brand-cyan/30'
             }`}
           >
-            {copied ? '✅ Copié !' : '📋 Copier'}
+            {copied ? t('output.copied') : t('output.copy')}
           </button>
         </div>
 
@@ -136,8 +137,6 @@ const TagOutput = ({ output, onSave }) => {
             </div>
           ))}
         </div>
-
-        {/* Raw string preview */}
         <p className="font-mono text-white/20 text-xs leading-relaxed break-all">
           {orderedStyle}
         </p>
@@ -146,8 +145,8 @@ const TagOutput = ({ output, onSave }) => {
       {/* Drag hint */}
       <div className="bg-brand-cyan/5 border-t border-brand-cyan/10 px-5 py-2">
         <p className="text-xs text-white/30">
-          ↕ Glisse les tags pour changer l'ordre ·{' '}
-          <span className="text-brand-cyan/50">★ 1er tag = priorité maximale</span>
+          {t('output.drag')}{' '}
+          <span className="text-brand-cyan/50">{t('output.priority')}</span>
         </p>
       </div>
 
@@ -161,9 +160,9 @@ const TagOutput = ({ output, onSave }) => {
       {/* Hint */}
       <div className="bg-white/5 border-t border-white/10 px-5 py-3">
         <p className="text-xs text-white/30">
-          💡 Colle dans{' '}
+          {t('output.hint')}{' '}
           <strong className="text-brand-cyan/70">"Style of Music"</strong>
-          {' '}sur Suno AI · Custom mode
+          {' '}{t('output.hint.post')}
         </p>
       </div>
     </div>

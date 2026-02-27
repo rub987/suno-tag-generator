@@ -1,11 +1,13 @@
 import { useState } from 'react';
+import { useLang } from '../../contexts/LangContext';
 
 const TagSelector = ({ category, categoryData, selected, onToggle }) => {
   const [search, setSearch] = useState('');
+  const { t } = useLang();
 
   const filtered = search
-    ? categoryData.tags.filter(t =>
-        t.label.toLowerCase().includes(search.toLowerCase()))
+    ? categoryData.tags.filter(tag =>
+        tag.label.toLowerCase().includes(search.toLowerCase()))
     : categoryData.tags;
 
   const isSelected = (tagLabel) => {
@@ -19,15 +21,15 @@ const TagSelector = ({ category, categoryData, selected, onToggle }) => {
       <div className="flex items-center justify-between mb-3">
         <label className="font-semibold text-sm flex items-center gap-2">
           <span>{categoryData.emoji}</span>
-          <span className="text-brand-cyan">{categoryData.label}</span>
+          <span className="text-brand-cyan">{t('cat.' + category)}</span>
           <span className="font-normal text-white/30 text-xs">
-            — {categoryData.multiple ? 'Plusieurs choix' : '1 seul choix'}
+            {categoryData.multiple ? t('selector.multiple') : t('selector.single')}
           </span>
         </label>
         {categoryData.multiple && Array.isArray(selected) && selected.length > 0 && (
           <span className="text-xs text-brand-cyan bg-brand-cyan/10 border border-brand-cyan/20
                            px-2 py-0.5 rounded-full">
-            {selected.length} sélectionné(s)
+            {t('selector.count', { n: selected.length })}
           </span>
         )}
       </div>
@@ -35,7 +37,7 @@ const TagSelector = ({ category, categoryData, selected, onToggle }) => {
       {categoryData.tags.length > 10 && (
         <input
           type="text"
-          placeholder="Rechercher..."
+          placeholder={t('selector.search')}
           value={search}
           onChange={e => setSearch(e.target.value)}
           className="w-full mb-3 px-3 py-2 bg-white/5 border border-white/10 rounded-xl
@@ -63,7 +65,7 @@ const TagSelector = ({ category, categoryData, selected, onToggle }) => {
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-white/30 text-sm italic">Aucun tag trouvé</p>
+        <p className="text-white/30 text-sm italic">{t('selector.none')}</p>
       )}
     </div>
   );

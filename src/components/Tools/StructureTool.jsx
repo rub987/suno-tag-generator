@@ -1,23 +1,25 @@
 import { useState } from 'react';
+import { useLang } from '../../contexts/LangContext';
 
 const SECTIONS = [
-  { id: 'intro', label: 'Intro' },
-  { id: 'verse', label: 'Verse' },
+  { id: 'intro',      label: 'Intro' },
+  { id: 'verse',      label: 'Verse' },
   { id: 'pre-chorus', label: 'Pre-Chorus' },
-  { id: 'chorus', label: 'Chorus' },
-  { id: 'bridge', label: 'Bridge' },
-  { id: 'solo', label: 'Solo' },
-  { id: 'breakdown', label: 'Breakdown' },
-  { id: 'outro', label: 'Outro' },
-  { id: 'drop', label: 'Drop' },
-  { id: 'hook', label: 'Hook' },
-  { id: 'interlude', label: 'Interlude' },
-  { id: 'fade-out', label: 'Fade out' }
+  { id: 'chorus',     label: 'Chorus' },
+  { id: 'bridge',     label: 'Bridge' },
+  { id: 'solo',       label: 'Solo' },
+  { id: 'breakdown',  label: 'Breakdown' },
+  { id: 'outro',      label: 'Outro' },
+  { id: 'drop',       label: 'Drop' },
+  { id: 'hook',       label: 'Hook' },
+  { id: 'interlude',  label: 'Interlude' },
+  { id: 'fade-out',   label: 'Fade out' }
 ];
 
 const StructureTool = () => {
   const [selected, setSelected] = useState([]);
   const [copied, setCopied] = useState(false);
+  const { t } = useLang();
 
   const toggle = (id) => {
     setSelected(prev =>
@@ -39,13 +41,11 @@ const StructureTool = () => {
     <div>
       <div className="flex items-center gap-2 mb-6">
         <span className="w-2 h-2 rounded-full bg-brand-magenta animate-pulse inline-block" />
-        <h2 className="section-title">Outil 2 — Structure des paroles</h2>
+        <h2 className="section-title">{t('structure.title')}</h2>
       </div>
 
       <div className="glass-card p-5">
-        <p className="text-sm text-white/40 mb-4">
-          Sélectionne les sections dans l'ordre souhaité
-        </p>
+        <p className="text-sm text-white/40 mb-4">{t('structure.subtitle')}</p>
         <div className="flex flex-wrap gap-2">
           {SECTIONS.map(section => (
             <button
@@ -68,7 +68,7 @@ const StructureTool = () => {
                         shadow-xl shadow-brand-magenta/10">
           <div className="bg-brand-magenta/10 px-5 py-3 flex items-center justify-between
                           border-b border-brand-magenta/20">
-            <span className="font-bold text-brand-magenta text-sm">📝 Structure Lyrics</span>
+            <span className="font-bold text-brand-magenta text-sm">{t('structure.output')}</span>
             <button
               onClick={handleCopy}
               className={`px-4 py-1.5 rounded-xl text-sm font-bold transition-all ${
@@ -77,7 +77,7 @@ const StructureTool = () => {
                   : 'bg-brand-magenta/20 hover:bg-brand-magenta/30 text-brand-magenta border border-brand-magenta/30'
               }`}
             >
-              {copied ? '✅ Copié !' : '📋 Copier'}
+              {copied ? t('structure.copied') : t('structure.copy')}
             </button>
           </div>
           <div className="bg-black/30 p-5">
@@ -87,7 +87,9 @@ const StructureTool = () => {
           </div>
           <div className="bg-white/5 border-t border-white/10 px-5 py-3">
             <p className="text-xs text-white/30">
-              💡 Colle dans <strong className="text-brand-magenta/70">"Lyrics"</strong> sur Suno AI
+              {t('structure.hint')}{' '}
+              <strong className="text-brand-magenta/70">"Lyrics"</strong>{' '}
+              {t('structure.hint.post')}
             </p>
           </div>
         </div>

@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { useTags } from './hooks/useTags';
 import { generateFullOutput } from './utils/tagGenerator';
+import { LangProvider, useLang } from './contexts/LangContext';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import StyleTool from './components/Tools/StyleTool';
 import StructureTool from './components/Tools/StructureTool';
 
-const App = () => {
-  const { tags, loading, source, forceRefresh } = useTags();
+const AppInner = () => {
+  const { tags, loading, forceRefresh } = useTags();
+  const { t } = useLang();
   const [activeTab, setActiveTab] = useState('style');
   const [selections, setSelections] = useState({
     genres: null,
@@ -57,10 +59,29 @@ const App = () => {
       <div className="text-center">
         <div className="w-12 h-12 border-2 border-brand-cyan border-t-transparent
                         rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-white/50 text-sm">Chargement des tags...</p>
+        <p className="text-white/50 text-sm">{t('loading')}</p>
       </div>
     </div>
   );
+
+  const TABS = [
+    {
+      id: 'style',
+      icon: '🎨',
+      title: t('tabs.style.title'),
+      desc: t('tabs.style.desc'),
+      field: 'Style of Music',
+      color: 'cyan'
+    },
+    {
+      id: 'structure',
+      icon: '📝',
+      title: t('tabs.structure.title'),
+      desc: t('tabs.structure.desc'),
+      field: 'Lyrics',
+      color: 'magenta'
+    }
+  ];
 
   return (
     <>
@@ -73,49 +94,29 @@ const App = () => {
           <div className="inline-flex items-center gap-2 bg-brand-cyan/10 border border-brand-cyan/20
                           text-brand-cyan text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse inline-block" />
-            Optimisé pour Suno AI v5
+            {t('hero.badge')}
           </div>
           <h2 className="text-4xl font-black text-white mb-3 leading-tight">
-            Génère ton{' '}
+            {t('hero.title')}{' '}
             <span className="bg-gradient-to-r from-brand-cyan to-brand-blue bg-clip-text text-transparent">
               Style of Music
             </span>
           </h2>
-          <p className="text-white/50 text-base">
-            Sélectionne tes tags et copie directement dans Suno AI
-          </p>
+          <p className="text-white/50 text-base">{t('hero.subtitle')}</p>
         </div>
 
         {/* Info Banner */}
         <div className="glass-card p-4 mb-8 flex items-start gap-3">
           <span className="text-brand-cyan text-lg mt-0.5">💡</span>
           <p className="text-white/70 text-sm leading-relaxed">
-            <strong className="text-white">Suno AI utilise 2 champs distincts.</strong>{' '}
-            Cet outil génère le contenu pour chacun séparément.
-            Utilise les deux onglets dans l'ordre.
+            <strong className="text-white">{t('banner.bold')}</strong>{' '}
+            {t('banner.text')}
           </p>
         </div>
 
         {/* Tabs */}
         <div className="grid grid-cols-2 gap-3 mb-8">
-          {[
-            {
-              id: 'style',
-              icon: '🎨',
-              title: 'Outil 1 — Style',
-              desc: 'Genre, ambiance, instruments, voix, tempo',
-              field: 'Style of Music',
-              color: 'cyan'
-            },
-            {
-              id: 'structure',
-              icon: '📝',
-              title: 'Outil 2 — Structure',
-              desc: 'Squelette de tes paroles section par section',
-              field: 'Lyrics',
-              color: 'magenta'
-            }
-          ].map(tab => (
+          {TABS.map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
@@ -139,7 +140,7 @@ const App = () => {
               <div className={`text-xs font-semibold ${
                 tab.color === 'cyan' ? 'text-brand-cyan/70' : 'text-brand-magenta/70'
               }`}>
-                → Champ "{tab.field}"
+                → {tab.field}
               </div>
             </button>
           ))}
@@ -170,5 +171,11 @@ const App = () => {
     </>
   );
 };
+
+const App = () => (
+  <LangProvider>
+    <AppInner />
+  </LangProvider>
+);
 
 export default App;

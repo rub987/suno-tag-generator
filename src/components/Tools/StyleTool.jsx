@@ -4,11 +4,13 @@ import TagOutput from '../Output/TagOutput';
 import Presets from '../Form/Presets';
 import History from '../Output/History';
 import { useHistory } from '../../hooks/useHistory';
+import { useLang } from '../../contexts/LangContext';
 
 const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange, onReset, onApplyPreset, activePresetId, output }) => {
 
   const [generated, setGenerated] = useState(false);
   const { history, addEntry, removeEntry, clearHistory } = useHistory();
+  const { t } = useLang();
 
   const totalSelected = [
     selections.genres ? 1 : 0,
@@ -20,15 +22,14 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
   ].reduce((a, b) => a + b, 0);
 
   const getButtonLabel = () => {
-    if (totalSelected === 0 && !customTags) return '🎵 Sélectionne des tags pour commencer';
-    if (totalSelected <= 2) return '🎶 Générer mon Style of Music';
-    return '🚀 Générer mon Style of Music';
+    if (totalSelected === 0 && !customTags) return t('style.btn.empty');
+    if (totalSelected <= 2) return t('style.btn.few');
+    return t('style.btn.ready');
   };
 
   const handleGenerate = () => {
     if (totalSelected === 0 && !customTags) return;
     setGenerated(true);
-    // Scroll vers l'output
     setTimeout(() => {
       document.getElementById('output-section')?.scrollIntoView({
         behavior: 'smooth',
@@ -39,7 +40,7 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
 
   const handleReset = () => {
     onReset();
-    setGenerated(false); // Cacher l'output au reset
+    setGenerated(false);
   };
 
   const handleApplyPreset = (preset) => {
@@ -51,7 +52,7 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
     <div>
       <div className="flex items-center gap-2 mb-6">
         <span className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse inline-block" />
-        <h2 className="section-title">Outil 1 — Génère ton style musical</h2>
+        <h2 className="section-title">{t('style.title')}</h2>
       </div>
 
       {/* Presets */}
@@ -78,22 +79,22 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
       <div className="glass-card p-5 mt-3">
         <label className="block text-sm font-semibold text-brand-cyan mb-1 flex items-center gap-2">
           <span>🖊️</span>
-          <span>Tags personnalisés</span>
-          <span className="font-normal text-white/30 text-xs">— Optionnel</span>
+          <span>{t('style.custom.label')}</span>
+          <span className="font-normal text-white/30 text-xs">{t('style.custom.opt')}</span>
         </label>
         <input
           type="text"
-          placeholder="Ex: ocean breeze, tropical, sunset vibes..."
+          placeholder={t('style.custom.ph')}
           value={customTags}
           onChange={e => {
             onCustomTagsChange(e.target.value);
-            setGenerated(false); // Reset output si on change
+            setGenerated(false);
           }}
           className="w-full mt-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl
                      text-white placeholder-white/30 text-sm focus:outline-none
                      focus:border-brand-cyan/50 transition-colors"
         />
-        <p className="text-xs text-white/30 mt-1.5 italic">Sépare par des virgules</p>
+        <p className="text-xs text-white/30 mt-1.5 italic">{t('style.custom.hint')}</p>
       </div>
 
       {/* Generate Button */}
@@ -101,15 +102,13 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
         onClick={handleGenerate}
         disabled={totalSelected === 0 && !customTags}
         className={`mt-6 ${
-          totalSelected === 0 && !customTags
-            ? 'btn-primary-disabled'
-            : 'btn-primary'
+          totalSelected === 0 && !customTags ? 'btn-primary-disabled' : 'btn-primary'
         }`}
       >
         {getButtonLabel()}
         {totalSelected > 0 && (
           <span className="ml-2 text-sm font-normal opacity-70">
-            ({totalSelected} tag{totalSelected > 1 ? 's' : ''})
+            ({totalSelected} {totalSelected > 1 ? t('style.btn.tags') : t('style.btn.tag')})
           </span>
         )}
       </button>
@@ -121,12 +120,12 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
             onClick={handleReset}
             className="text-xs text-white/30 hover:text-white/60 transition-colors"
           >
-            🗑️ Tout effacer
+            {t('style.reset')}
           </button>
         </div>
       )}
 
-      {/* Output - visible seulement après clic */}
+      {/* Output */}
       <div id="output-section">
         {generated && <TagOutput output={output} onSave={addEntry} />}
       </div>
@@ -138,14 +137,14 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
       <div className="glass-card p-5 mt-8">
         <h3 className="font-bold text-white mb-5 flex items-center gap-2">
           <span>📖</span>
-          <span>Workflow complet dans Suno AI</span>
+          <span>{t('style.wf.title')}</span>
         </h3>
         <div className="space-y-4">
           {[
-            { n: 1, content: <span>Utilise l'<strong>Outil 1</strong> → copie dans <Tag color="cyan">Style of Music</Tag></span> },
-            { n: 2, content: <span>Utilise l'<strong>Outil 2</strong> → copie dans <Tag color="magenta">Lyrics</Tag> puis écris tes paroles</span> },
-            { n: 3, content: <span>Sur <strong>suno.com</strong>, active le <strong>Custom mode</strong></span> },
-            { n: 4, content: <span>Colle chaque résultat dans le bon champ et clique <strong>Create</strong> 🎵</span> },
+            { n: 1, content: <span>{t('style.wf.1')} <Tag color="cyan">Style of Music</Tag></span> },
+            { n: 2, content: <span>{t('style.wf.2')} <Tag color="magenta">Lyrics</Tag> {t('style.wf.2b')}</span> },
+            { n: 3, content: <span>{t('style.wf.3')}</span> },
+            { n: 4, content: <span>{t('style.wf.4')}</span> },
           ].map(step => (
             <div key={step.n} className="flex items-start gap-3">
               <span className="flex-shrink-0 w-6 h-6 rounded-full

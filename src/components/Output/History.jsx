@@ -1,19 +1,21 @@
 import { useState } from 'react';
-
-const formatRelativeTime = (timestamp) => {
-  const diff = Date.now() - timestamp;
-  const min = Math.floor(diff / 60000);
-  const h = Math.floor(diff / 3600000);
-  const d = Math.floor(diff / 86400000);
-  if (min < 1) return "à l'instant";
-  if (min < 60) return `il y a ${min} min`;
-  if (h < 24) return `il y a ${h}h`;
-  return `il y a ${d}j`;
-};
+import { useLang } from '../../contexts/LangContext';
 
 const History = ({ history, onRemove, onClear }) => {
   const [open, setOpen] = useState(false);
   const [copiedId, setCopiedId] = useState(null);
+  const { t } = useLang();
+
+  const formatRelativeTime = (timestamp) => {
+    const diff = Date.now() - timestamp;
+    const min = Math.floor(diff / 60000);
+    const h = Math.floor(diff / 3600000);
+    const d = Math.floor(diff / 86400000);
+    if (min < 1) return t('history.now');
+    if (min < 60) return t('history.min', { n: min });
+    if (h < 24) return t('history.h', { n: h });
+    return t('history.d', { n: d });
+  };
 
   const handleCopy = async (entry) => {
     await navigator.clipboard.writeText(entry.style);
@@ -34,7 +36,7 @@ const History = ({ history, onRemove, onClear }) => {
       >
         <div className="flex items-center gap-3">
           <span className="text-white/50 text-sm">🕐</span>
-          <span className="text-sm font-semibold text-white/70">Historique</span>
+          <span className="text-sm font-semibold text-white/70">{t('history.title')}</span>
           <span className="text-xs px-2 py-0.5 rounded-full bg-white/10 text-white/40 font-mono">
             {history.length}
           </span>
@@ -51,7 +53,7 @@ const History = ({ history, onRemove, onClear }) => {
             <div
               key={entry.id}
               className="px-5 py-3.5 border-b border-white/5 last:border-0
-                         hover:bg-white/5 transition-colors group"
+                         hover:bg-white/5 transition-colors"
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
@@ -61,9 +63,9 @@ const History = ({ history, onRemove, onClear }) => {
                   <div className="flex items-center gap-2 mt-1.5">
                     <span className="text-[10px] text-white/25">{formatRelativeTime(entry.timestamp)}</span>
                     <span className="text-[10px] text-white/20">·</span>
-                    <span className="text-[10px] text-white/25">{entry.tagCount} tags</span>
+                    <span className="text-[10px] text-white/25">{entry.tagCount} {t('history.tags')}</span>
                     <span className="text-[10px] text-white/20">·</span>
-                    <span className="text-[10px] text-white/25">{entry.charCount} chars</span>
+                    <span className="text-[10px] text-white/25">{entry.charCount} {t('history.chars')}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-1.5 flex-shrink-0">
@@ -95,7 +97,7 @@ const History = ({ history, onRemove, onClear }) => {
               onClick={onClear}
               className="text-[11px] text-white/20 hover:text-red-400 transition-colors"
             >
-              🗑️ Tout effacer
+              {t('history.clear')}
             </button>
           </div>
         </div>
