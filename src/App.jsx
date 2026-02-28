@@ -97,6 +97,10 @@ const AppInner = () => {
 
         {/* Hero */}
         <div className="text-center mb-10">
+          <div className="flex items-center justify-center gap-2 text-xs text-white/40 mb-3">
+            <span className="text-base">🇵🇫</span>
+            <span>Proudly created in French Polynesia</span>
+          </div>
           <div className="inline-flex items-center gap-2 bg-brand-cyan/10 border border-brand-cyan/20
                           text-brand-cyan text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse inline-block" />
@@ -105,7 +109,7 @@ const AppInner = () => {
           <h2 className="text-4xl font-black text-white mb-3 leading-tight">
             {t('hero.title')}{' '}
             <span className="bg-gradient-to-r from-brand-cyan to-brand-blue bg-clip-text text-transparent">
-              Style of Music
+              {t('hero.highlight')}
             </span>
           </h2>
           <p className="text-white/50 text-base">{t('hero.subtitle')}</p>
