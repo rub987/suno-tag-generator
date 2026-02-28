@@ -44,6 +44,8 @@ export const translations = {
     'selector.search':      'Rechercher...',
     'selector.none':        'Aucun tag trouvé',
     'selector.count':       '{n} sélectionné(s)',
+    'selector.legend.high':   'Tag reconnu par Suno',
+    'selector.legend.medium': 'Résultat variable',
 
     // Tag output
     'output.copy':          '📋 Copier',
@@ -134,6 +136,8 @@ export const translations = {
     'selector.search':      'Search...',
     'selector.none':        'No tags found',
     'selector.count':       '{n} selected',
+    'selector.legend.high':   'Recognized by Suno',
+    'selector.legend.medium': 'Variable result',
 
     // Tag output
     'output.copy':          '📋 Copy',

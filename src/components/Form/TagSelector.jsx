@@ -64,6 +64,19 @@ const TagSelector = ({ category, categoryData, selected, onToggle }) => {
         ))}
       </div>
 
+      {categoryData.tags.some(tag => tag.confidence === 'medium') && (
+        <div className="flex items-center gap-3 mt-3 pt-2 border-t border-white/5">
+          <span className="flex items-center gap-1.5 text-xs text-white/60">
+            <span className="inline-block w-2.5 h-2.5 rounded-full border border-white/40" />
+            {t('selector.legend.high')}
+          </span>
+          <span className="flex items-center gap-1.5 text-xs text-yellow-400/70">
+            <span className="inline-block w-2.5 h-2.5 rounded-full border border-yellow-400/60" />
+            {t('selector.legend.medium')}
+          </span>
+        </div>
+      )}
+
       {filtered.length === 0 && (
         <p className="text-white text-sm italic">{t('selector.none')}</p>
       )}
