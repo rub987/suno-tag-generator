@@ -49,7 +49,13 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
 
   const handleApplyPreset = (preset) => {
     onApplyPreset(preset);
-    setGenerated(false);
+    setGenerated(true);
+    setTimeout(() => {
+      document.getElementById('output-section')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 150);
   };
 
   const handleRandom = () => {
