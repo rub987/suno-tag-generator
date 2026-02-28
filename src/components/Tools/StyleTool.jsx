@@ -91,7 +91,7 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
         <span className="text-sm font-semibold text-white/40 group-hover:text-white/70 transition-colors">
           {t('style.random.btn')}
         </span>
-        <span className="text-xs text-white/20 group-hover:text-white/40 transition-colors hidden sm:inline">
+        <span className="text-xs text-white/80 group-hover:text-white/40 transition-colors hidden sm:inline">
           — {t('style.random.hint')}
         </span>
       </button>

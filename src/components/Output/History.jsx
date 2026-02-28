@@ -62,9 +62,9 @@ const History = ({ history, onRemove, onClear }) => {
                   </p>
                   <div className="flex items-center gap-2 mt-1.5">
                     <span className="text-[10px] text-white/25">{formatRelativeTime(entry.timestamp)}</span>
-                    <span className="text-[10px] text-white/20">·</span>
+                    <span className="text-[10px] text-white/80">·</span>
                     <span className="text-[10px] text-white/25">{entry.tagCount} {t('history.tags')}</span>
-                    <span className="text-[10px] text-white/20">·</span>
+                    <span className="text-[10px] text-white/80">·</span>
                     <span className="text-[10px] text-white/25">{entry.charCount} {t('history.chars')}</span>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ const History = ({ history, onRemove, onClear }) => {
                   </button>
                   <button
                     onClick={() => onRemove(entry.id)}
-                    className="px-2 py-1 rounded-lg text-xs text-white/20
+                    className="px-2 py-1 rounded-lg text-xs text-white/80
                                hover:bg-red-500/10 hover:text-red-400 transition-all"
                   >
                     ✕
@@ -95,7 +95,7 @@ const History = ({ history, onRemove, onClear }) => {
           <div className="px-5 py-2.5 flex justify-end">
             <button
               onClick={onClear}
-              className="text-[11px] text-white/20 hover:text-red-400 transition-colors"
+              className="text-[11px] text-white/80 hover:text-red-400 transition-colors"
             >
               {t('history.clear')}
             </button>

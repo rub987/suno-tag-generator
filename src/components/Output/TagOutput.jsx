@@ -162,7 +162,7 @@ const TagOutput = ({ output, onSave }) => {
               </div>
 
               {/* Poignée drag — desktop uniquement */}
-              <span className="hidden md:inline text-white/20 text-xs">⠿</span>
+              <span className="hidden md:inline text-white/80 text-xs">⠿</span>
 
               {index === 0 && (
                 <span className="text-[10px] text-brand-cyan font-bold">★</span>
@@ -171,7 +171,7 @@ const TagOutput = ({ output, onSave }) => {
             </div>
           ))}
         </div>
-        <p className="font-mono text-white/20 text-xs leading-relaxed break-all">
+        <p className="font-mono text-white/80 text-xs leading-relaxed break-all">
           {orderedStyle}
         </p>
       </div>

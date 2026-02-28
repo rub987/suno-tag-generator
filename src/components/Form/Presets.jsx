@@ -19,7 +19,7 @@ const Presets = ({ onApply, activePresetId }) => {
         <p className="text-xs text-white font-semibold uppercase tracking-widest">
           {t('style.presets')}
         </p>
-        <span className="flex items-center gap-1 text-xs text-white/20 italic">
+        <span className="flex items-center gap-1 text-xs text-white/80 italic">
           {t('style.presets.scroll')}
           <span className="animate-bounce-x inline-block">→</span>
         </span>

@@ -10,7 +10,7 @@ const LangToggle = () => {
       title={lang === 'fr' ? 'Switch to English' : 'Passer en français'}
     >
       <span className={lang === 'fr' ? 'text-brand-cyan' : 'text-white/40'}>FR</span>
-      <span className="text-white/20">|</span>
+      <span className="text-white/80">|</span>
       <span className={lang === 'en' ? 'text-brand-cyan' : 'text-white/40'}>EN</span>
     </button>
   );
