@@ -16,7 +16,7 @@ const Presets = ({ onApply, activePresetId }) => {
   return (
     <div className="mb-6">
       <div className="flex items-center justify-between mb-3">
-        <p className="text-xs text-white/30 font-semibold uppercase tracking-widest">
+        <p className="text-xs text-white font-semibold uppercase tracking-widest">
           {t('style.presets')}
         </p>
         <span className="flex items-center gap-1 text-xs text-white/20 italic">
