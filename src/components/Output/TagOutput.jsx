@@ -70,7 +70,7 @@ const TagOutput = ({ output, onSave }) => {
   if (!output.style) return (
     <div className="mt-6 rounded-2xl border-2 border-dashed border-white/10 p-10 text-center">
       <p className="text-4xl mb-3">🎵</p>
-      <p className="text-white/30 text-sm">{t('output.empty')}</p>
+      <p className="text-white text-sm">{t('output.empty')}</p>
     </div>
   );
 
@@ -92,7 +92,7 @@ const TagOutput = ({ output, onSave }) => {
             }`}>
               {output.charCount}/{output.limit}
             </span>
-            <span className="text-xs text-white/30">{output.tagCount} {t('output.tags')}</span>
+            <span className="text-xs text-white">{output.tagCount} {t('output.tags')}</span>
           </div>
           <button
             onClick={handleCopy}
@@ -178,7 +178,7 @@ const TagOutput = ({ output, onSave }) => {
 
       {/* Reorder hint */}
       <div className="bg-brand-cyan/5 border-t border-brand-cyan/10 px-5 py-2">
-        <p className="text-xs text-white/30">
+        <p className="text-xs text-white">
           <span className="hidden md:inline">{t('output.drag')}</span>
           <span className="md:hidden">{t('output.drag.mobile')}</span>
           {' '}<span className="text-brand-cyan/50">{t('output.priority')}</span>
@@ -194,7 +194,7 @@ const TagOutput = ({ output, onSave }) => {
 
       {/* Hint */}
       <div className="bg-white/5 border-t border-white/10 px-5 py-3">
-        <p className="text-xs text-white/30">
+        <p className="text-xs text-white">
           {t('output.hint')}{' '}
           <strong className="text-brand-cyan/70">"Style of Music"</strong>
           {' '}{t('output.hint.post')}

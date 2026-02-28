@@ -118,7 +118,7 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
         <label className="block text-sm font-semibold text-brand-cyan mb-1 flex items-center gap-2">
           <span>🖊️</span>
           <span>{t('style.custom.label')}</span>
-          <span className="font-normal text-white/30 text-xs">{t('style.custom.opt')}</span>
+          <span className="font-normal text-white text-xs">{t('style.custom.opt')}</span>
         </label>
         <input
           type="text"
@@ -132,7 +132,7 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
                      text-white placeholder-white/30 text-sm focus:outline-none
                      focus:border-brand-cyan/50 transition-colors"
         />
-        <p className="text-xs text-white/30 mt-1.5 italic">{t('style.custom.hint')}</p>
+        <p className="text-xs text-white mt-1.5 italic">{t('style.custom.hint')}</p>
       </div>
 
       {/* Generate Button */}
@@ -156,7 +156,7 @@ const StyleTool = ({ tags, selections, customTags, onToggle, onCustomTagsChange,
         <div className="mt-2 flex justify-end">
           <button
             onClick={handleReset}
-            className="text-xs text-white/30 hover:text-white/60 transition-colors"
+            className="text-xs text-white hover:text-white/60 transition-colors"
           >
             {t('style.reset')}
           </button>

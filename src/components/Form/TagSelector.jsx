@@ -22,7 +22,7 @@ const TagSelector = ({ category, categoryData, selected, onToggle }) => {
         <label className="font-semibold text-sm flex items-center gap-2">
           <span>{categoryData.emoji}</span>
           <span className="text-brand-cyan">{t('cat.' + category)}</span>
-          <span className="font-normal text-white/30 text-xs">
+          <span className="font-normal text-white text-xs">
             {categoryData.multiple ? t('selector.multiple') : t('selector.single')}
           </span>
         </label>
@@ -65,7 +65,7 @@ const TagSelector = ({ category, categoryData, selected, onToggle }) => {
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-white/30 text-sm italic">{t('selector.none')}</p>
+        <p className="text-white text-sm italic">{t('selector.none')}</p>
       )}
     </div>
   );

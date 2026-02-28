@@ -47,7 +47,7 @@
 
   .btn-primary-disabled {
     @apply w-full py-4 rounded-2xl font-bold text-lg
-           bg-white/10 text-white/30 cursor-not-allowed;
+           bg-white/10 text-white cursor-not-allowed;
   }
 
   /* Section titles */

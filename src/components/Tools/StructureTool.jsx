@@ -86,7 +86,7 @@ const StructureTool = () => {
             </pre>
           </div>
           <div className="bg-white/5 border-t border-white/10 px-5 py-3">
-            <p className="text-xs text-white/30">
+            <p className="text-xs text-white">
               {t('structure.hint')}{' '}
               <strong className="text-brand-magenta/70">"Lyrics"</strong>{' '}
               {t('structure.hint.post')}

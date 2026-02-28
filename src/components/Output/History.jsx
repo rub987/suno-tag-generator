@@ -41,7 +41,7 @@ const History = ({ history, onRemove, onClear }) => {
             {history.length}
           </span>
         </div>
-        <span className={`text-white/30 text-xs transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
+        <span className={`text-white text-xs transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
           ▼
         </span>
       </button>
