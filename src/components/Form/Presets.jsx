@@ -11,48 +11,74 @@ const colorMap = {
   purple:  { card: 'border-purple-400/30 hover:border-purple-400/60 hover:bg-purple-400/5',   badge: 'bg-purple-400/10 text-purple-300' },
 };
 
+const PresetRow = ({ presets, onApply, activePresetId, colorMap }) => (
+  <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+    {presets.map(preset => {
+      const colors = colorMap[preset.color] || colorMap.cyan;
+      const isActive = activePresetId === preset.id;
+      return (
+        <button
+          key={preset.id}
+          onClick={() => onApply(preset)}
+          className={`flex-shrink-0 border rounded-2xl px-4 py-3 text-left transition-all duration-200
+                      min-w-[130px] ${colors.card} ${
+            isActive ? 'ring-1 ring-offset-0 ring-white/20 bg-white/5' : ''
+          }`}
+        >
+          <div className="text-xl mb-1.5">{preset.emoji}</div>
+          <div className="text-white text-xs font-bold mb-2 leading-tight">{preset.name}</div>
+          <div className="flex flex-wrap gap-1">
+            <span className={`text-[10px] px-1.5 py-0.5 rounded-md font-medium ${colors.badge}`}>
+              {preset.selections.genres}
+            </span>
+            {(preset.selections.moods || []).slice(0, 1).map(m => (
+              <span key={m} className="text-[10px] px-1.5 py-0.5 rounded-md font-medium bg-white/10 text-white/50">
+                {m}
+              </span>
+            ))}
+          </div>
+        </button>
+      );
+    })}
+  </div>
+);
+
 const Presets = ({ onApply, activePresetId }) => {
   const { t } = useLang();
+  const pacificPresets = PRESETS.filter(p => p.pacific);
+  const generalPresets = PRESETS.filter(p => !p.pacific);
+
   return (
-    <div className="mb-6">
-      <div className="flex items-center justify-between mb-3">
-        <p className="text-xs text-white font-semibold uppercase tracking-widest">
-          {t('style.presets')}
-        </p>
-        <span className="flex items-center gap-1 text-xs text-white/80 italic">
-          {t('style.presets.scroll')}
-          <span className="animate-bounce-x inline-block">→</span>
-        </span>
+    <div className="mb-6 flex flex-col gap-5">
+
+      {/* Pacific Islands */}
+      <div>
+        <div className="flex items-center justify-between mb-3">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-cyan">
+            {t('style.presets.pacific')}
+          </p>
+          <span className="flex items-center gap-1 text-xs text-white/80 italic">
+            {t('style.presets.scroll')}
+            <span className="animate-bounce-x inline-block">→</span>
+          </span>
+        </div>
+        <PresetRow presets={pacificPresets} onApply={onApply} activePresetId={activePresetId} colorMap={colorMap} />
       </div>
-      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-        {PRESETS.map(preset => {
-          const colors = colorMap[preset.color] || colorMap.cyan;
-          const isActive = activePresetId === preset.id;
-          return (
-            <button
-              key={preset.id}
-              onClick={() => onApply(preset)}
-              className={`flex-shrink-0 border rounded-2xl px-4 py-3 text-left transition-all duration-200
-                          min-w-[130px] ${colors.card} ${
-                isActive ? 'ring-1 ring-offset-0 ring-white/20 bg-white/5' : ''
-              }`}
-            >
-              <div className="text-xl mb-1.5">{preset.emoji}</div>
-              <div className="text-white text-xs font-bold mb-2 leading-tight">{preset.name}</div>
-              <div className="flex flex-wrap gap-1">
-                <span className={`text-[10px] px-1.5 py-0.5 rounded-md font-medium ${colors.badge}`}>
-                  {preset.selections.genres}
-                </span>
-                {preset.selections.moods.slice(0, 1).map(m => (
-                  <span key={m} className="text-[10px] px-1.5 py-0.5 rounded-md font-medium bg-white/10 text-white/50">
-                    {m}
-                  </span>
-                ))}
-              </div>
-            </button>
-          );
-        })}
+
+      {/* General */}
+      <div>
+        <div className="flex items-center justify-between mb-3">
+          <p className="text-xs text-white font-semibold uppercase tracking-widest">
+            {t('style.presets')}
+          </p>
+          <span className="flex items-center gap-1 text-xs text-white/80 italic">
+            {t('style.presets.scroll')}
+            <span className="animate-bounce-x inline-block">→</span>
+          </span>
+        </div>
+        <PresetRow presets={generalPresets} onApply={onApply} activePresetId={activePresetId} colorMap={colorMap} />
       </div>
+
     </div>
   );
 };

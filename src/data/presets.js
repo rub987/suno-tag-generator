@@ -284,6 +284,7 @@ export const PRESETS = [
     name: 'Reggae Tahitien',
     emoji: '🌺',
     color: 'cyan',
+    pacific: true,
     selections: {
       genres: 'Pacific Reggae',
       moods: ['Relaxing', 'Peaceful', 'Soulful'],
@@ -299,6 +300,7 @@ export const PRESETS = [
     name: 'Valse Tahitienne',
     emoji: '💃',
     color: 'magenta',
+    pacific: true,
     selections: {
       genres: 'Chanson',
       moods: ['Romantic', 'Dreamy', 'Nostalgic'],
@@ -314,6 +316,7 @@ export const PRESETS = [
     name: 'Zouk Tahitien',
     emoji: '🌸',
     color: 'purple',
+    pacific: true,
     selections: {
       genres: 'Dance',
       moods: ['Romantic', 'Passionate', 'Dreamy'],
@@ -329,6 +332,7 @@ export const PRESETS = [
     name: 'Rock Tahitien',
     emoji: '🏝️',
     color: 'red',
+    pacific: true,
     selections: {
       genres: 'Rock',
       moods: ['Energetic', 'Passionate', 'Powerful'],
@@ -338,5 +342,85 @@ export const PRESETS = [
       production: ['Raw', 'Modern']
     },
     customTags: 'tahitian rock, polynesian'
+  },
+  {
+    id: 'hawaiian-slack-key',
+    name: 'Hawaiian Slack-Key',
+    emoji: '🌺',
+    color: 'yellow',
+    pacific: true,
+    selections: {
+      genres: 'Hawaiian',
+      moods: ['Relaxing', 'Tropical', 'Dreamy'],
+      instruments: ['Slack-Key Guitar', 'Ukulele'],
+      vocals: 'Male Vocals',
+      tempo: 'Slow',
+      production: ['Acoustic', 'Warm']
+    },
+    customTags: 'aloha, hawaii, island breeze'
+  },
+  {
+    id: 'maori-fusion',
+    name: 'Māori Fusion',
+    emoji: '🌿',
+    color: 'cyan',
+    pacific: true,
+    selections: {
+      genres: 'Folk',
+      moods: ['Spiritual', 'Powerful', 'Ancestral'],
+      instruments: ['Taonga Pūoro', 'Drums'],
+      vocals: 'Choir',
+      tempo: 'Moderate',
+      production: ['Raw', 'Acoustic']
+    },
+    customTags: 'maori, haka, new zealand, tribal'
+  },
+  {
+    id: 'cook-islands-groove',
+    name: 'Cook Islands',
+    emoji: '🌴',
+    color: 'orange',
+    pacific: true,
+    selections: {
+      genres: 'Pacific Reggae',
+      moods: ['Happy', 'Relaxing', 'Groovy'],
+      instruments: ['Guitar', 'Ukulele', 'Drums'],
+      vocals: 'Male Vocals',
+      tempo: 'Upbeat',
+      production: ['Warm', 'Acoustic']
+    },
+    customTags: 'cook islands, island groove, pacific'
+  },
+  {
+    id: 'rapa-nui-spirit',
+    name: 'Rapa Nui Spirit',
+    emoji: '🗿',
+    color: 'purple',
+    pacific: true,
+    selections: {
+      genres: 'Folk',
+      moods: ['Mysterious', 'Spiritual', 'Ancestral'],
+      instruments: ['Pahu Drum', 'Nose Flute'],
+      vocals: 'Choir',
+      tempo: 'Slow',
+      production: ['Raw', 'Acoustic']
+    },
+    customTags: 'rapa nui, easter island, ancestral, pacific'
+  },
+  {
+    id: 'aboriginal-dreaming',
+    name: 'Aboriginal Dreaming',
+    emoji: '🪃',
+    color: 'orange',
+    pacific: true,
+    selections: {
+      genres: 'Folk',
+      moods: ['Spiritual', 'Ethereal', 'Mysterious'],
+      instruments: ['Didgeridoo', 'Drums'],
+      vocals: 'No Vocals',
+      tempo: 'Very Slow',
+      production: ['Raw', 'Minimalist']
+    },
+    customTags: 'aboriginal, dreamtime, australia, ancient'
   }
 ];
