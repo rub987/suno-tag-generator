@@ -1,6 +1,6 @@
 {
-  "version": "2.0.0",
-  "lastUpdated": "2025-01-01",
+  "version": "2.0.1",
+  "lastUpdated": "2026-03-02",
   "source": "https://suno.com/labs/genre-wheel",
   "categories": {
     "genres": {
@@ -8,179 +8,871 @@
       "emoji": "🎵",
       "multiple": false,
       "tags": [
-        { "id": "pop", "label": "Pop", "confidence": "high" },
-        { "id": "rock", "label": "Rock", "confidence": "high" },
-        { "id": "hip-hop", "label": "Hip Hop", "confidence": "high" },
-        { "id": "jazz", "label": "Jazz", "confidence": "high" },
-        { "id": "classical", "label": "Classical", "confidence": "high" },
-        { "id": "electronic", "label": "Electronic", "confidence": "high" },
-        { "id": "edm", "label": "EDM", "confidence": "high" },
-        { "id": "blues", "label": "Blues", "confidence": "high" },
-        { "id": "soul", "label": "Soul", "confidence": "high" },
-        { "id": "funk", "label": "Funk", "confidence": "high" },
-        { "id": "reggae", "label": "Reggae", "confidence": "high" },
-        { "id": "country", "label": "Country", "confidence": "high" },
-        { "id": "folk", "label": "Folk", "confidence": "high" },
-        { "id": "metal", "label": "Metal", "confidence": "high" },
-        { "id": "punk", "label": "Punk", "confidence": "high" },
-        { "id": "indie", "label": "Indie", "confidence": "high" },
-        { "id": "alternative-rock", "label": "Alternative Rock", "confidence": "high" },
-        { "id": "blues-rock", "label": "Blues Rock", "confidence": "high" },
-        { "id": "bluegrass", "label": "Bluegrass", "confidence": "high" },
-        { "id": "trance", "label": "Trance", "confidence": "high" },
-        { "id": "house", "label": "House", "confidence": "high" },
-        { "id": "techno", "label": "Techno", "confidence": "high" },
-        { "id": "dubstep", "label": "Dubstep", "confidence": "high" },
-        { "id": "trap", "label": "Trap", "confidence": "high" },
-        { "id": "rap", "label": "Rap", "confidence": "high" },
-        { "id": "dance", "label": "Dance", "confidence": "high" },
-        { "id": "disco", "label": "Disco", "confidence": "high" },
-        { "id": "swing", "label": "Swing", "confidence": "high" },
-        { "id": "bossa-nova", "label": "Bossa Nova", "confidence": "high" },
-        { "id": "samba", "label": "Samba", "confidence": "high" },
-        { "id": "salsa", "label": "Salsa", "confidence": "high" },
-        { "id": "tango", "label": "Tango", "confidence": "high" },
-        { "id": "flamenco", "label": "Flamenco", "confidence": "high" },
-        { "id": "reggaeton", "label": "Reggaeton", "confidence": "high" },
-        { "id": "cumbia", "label": "Cumbia", "confidence": "high" },
-        { "id": "merengue", "label": "Merengue", "confidence": "high" },
-        { "id": "bachata", "label": "Bachata", "confidence": "high" },
-        { "id": "afrobeat", "label": "Afrobeat", "confidence": "high" },
-        { "id": "afro-jazz", "label": "Afro-Jazz", "confidence": "high" },
-        { "id": "afro-funk", "label": "Afro-Funk", "confidence": "high" },
-        { "id": "afro-house", "label": "Afro House", "confidence": "high" },
-        { "id": "afropiano", "label": "Afropiano", "confidence": "high" },
-        { "id": "afroswing", "label": "Afroswing", "confidence": "high" },
-        { "id": "afro-trap", "label": "Afro Trap", "confidence": "high" },
-        { "id": "afro-rock", "label": "Afro-Rock", "confidence": "high" },
-        { "id": "afro-cuban-jazz", "label": "Afro-Cuban Jazz", "confidence": "high" },
-        { "id": "k-pop", "label": "K-Pop", "confidence": "high" },
-        { "id": "j-pop", "label": "J-Pop", "confidence": "high" },
-        { "id": "synthwave", "label": "Synthwave", "confidence": "high" },
-        { "id": "synthpop", "label": "Synthpop", "confidence": "high" },
-        { "id": "dream-pop", "label": "Dream Pop", "confidence": "high" },
-        { "id": "shoegaze", "label": "Shoegaze", "confidence": "high" },
-        { "id": "lo-fi", "label": "Lo-fi", "confidence": "high" },
-        { "id": "chillwave", "label": "Chillwave", "confidence": "high" },
-        { "id": "chillstep", "label": "Chillstep", "confidence": "high" },
-        { "id": "chillsynth", "label": "Chillsynth", "confidence": "high" },
-        { "id": "bedroom-pop", "label": "Bedroom Pop", "confidence": "high" },
-        { "id": "indie-pop", "label": "Indie Pop", "confidence": "high" },
-        { "id": "alt-pop", "label": "Alt-Pop", "confidence": "high" },
-        { "id": "alt-country", "label": "Alt-Country", "confidence": "high" },
-        { "id": "americana", "label": "Americana", "confidence": "high" },
-        { "id": "gospel", "label": "Gospel", "confidence": "high" },
-        { "id": "motown", "label": "Motown", "confidence": "high" },
-        { "id": "new-jack-swing", "label": "New Jack Swing", "confidence": "high" },
-        { "id": "boogie", "label": "Boogie", "confidence": "high" },
-        { "id": "p-funk", "label": "P-Funk", "confidence": "high" },
-        { "id": "doo-wop", "label": "Doo-Wop", "confidence": "high" },
-        { "id": "rockabilly", "label": "Rockabilly", "confidence": "high" },
-        { "id": "surf-rock", "label": "Surf Rock", "confidence": "high" },
-        { "id": "grunge", "label": "Grunge", "confidence": "high" },
-        { "id": "emo", "label": "Emo", "confidence": "high" },
-        { "id": "math-rock", "label": "Math Rock", "confidence": "high" },
-        { "id": "prog", "label": "Prog", "confidence": "high" },
-        { "id": "symphonic-metal", "label": "Symphonic Metal", "confidence": "high" },
-        { "id": "drum-and-bass", "label": "Drum and Bass", "confidence": "high" },
-        { "id": "liquid-drum-and-bass", "label": "Liquid Drum and Bass", "confidence": "high" },
-        { "id": "drill-and-bass", "label": "Drill and Bass", "confidence": "high" },
-        { "id": "drill", "label": "Drill", "confidence": "high" },
-        { "id": "jungle", "label": "Jungle", "confidence": "high" },
-        { "id": "breakbeat", "label": "Breakbeat", "confidence": "high" },
-        { "id": "grime", "label": "Grime", "confidence": "high" },
-        { "id": "dubstep", "label": "Dubstep", "confidence": "high" },
-        { "id": "2-step", "label": "2-Step", "confidence": "high" },
-        { "id": "garage", "label": "Garage", "confidence": "high" },
-        { "id": "glitch-hop", "label": "Glitch Hop", "confidence": "high" },
-        { "id": "ambient-techno", "label": "Ambient Techno", "confidence": "high" },
-        { "id": "ambient-house", "label": "Ambient House", "confidence": "high" },
-        { "id": "ambient-dub", "label": "Ambient Dub", "confidence": "high" },
-        { "id": "ambient-trance", "label": "Ambient Trance", "confidence": "high" },
-        { "id": "ambient-noise-wall", "label": "Ambient Noise Wall", "confidence": "high" },
-        { "id": "acid-house", "label": "Acid House", "confidence": "high" },
-        { "id": "acid-jazz", "label": "Acid Jazz", "confidence": "high" },
-        { "id": "acid-rock", "label": "Acid Rock", "confidence": "high" },
-        { "id": "acid-trance", "label": "Acid Trance", "confidence": "high" },
-        { "id": "acid-techno", "label": "Acid Techno", "confidence": "high" },
-        { "id": "acid-breaks", "label": "Acid Breaks", "confidence": "high" },
-        { "id": "goa-trance", "label": "Goa Trance", "confidence": "high" },
-        { "id": "dark-goa-trance", "label": "Dark Goa Trance", "confidence": "high" },
-        { "id": "psybient", "label": "Psybient", "confidence": "high" },
-        { "id": "illbient", "label": "Illbient", "confidence": "high" },
-        { "id": "hypnagogic", "label": "Hypnagogic", "confidence": "high" },
-        { "id": "hyphy", "label": "Hyphy", "confidence": "high" },
-        { "id": "cloud-rap", "label": "Cloud Rap", "confidence": "high" },
-        { "id": "boom-bap", "label": "Boom Bap", "confidence": "high" },
-        { "id": "dirty-south", "label": "Dirty South", "confidence": "high" },
-        { "id": "crunk", "label": "Crunk", "confidence": "high" },
-        { "id": "dancehall", "label": "Dancehall", "confidence": "high" },
-        { "id": "roots-reggae", "label": "Roots Reggae", "confidence": "high" },
-        { "id": "pacific-reggae", "label": "Pacific Reggae", "confidence": "high" },
-        { "id": "arabic-reggae", "label": "Arabic Reggae", "confidence": "high" },
-        { "id": "dembow", "label": "Dembow", "confidence": "high" },
-        { "id": "calypso", "label": "Calypso", "confidence": "high" },
-        { "id": "mento", "label": "Mento", "confidence": "high" },
-        { "id": "big-band", "label": "Big Band", "confidence": "high" },
-        { "id": "bebop", "label": "Bebop", "confidence": "high" },
-        { "id": "avant-garde-jazz", "label": "Avant-Garde Jazz", "confidence": "high" },
-        { "id": "jazz-fusion", "label": "Jazz Fusion", "confidence": "high" },
-        { "id": "smooth-jazz", "label": "Smooth Jazz", "confidence": "high" },
-        { "id": "raga-jazz", "label": "Raga Jazz", "confidence": "high" },
-        { "id": "klezmer", "label": "Klezmer", "confidence": "high" },
-        { "id": "celtic", "label": "Celtic", "confidence": "high" },
-        { "id": "carnatic", "label": "Carnatic", "confidence": "high" },
-        { "id": "raga", "label": "Raga", "confidence": "high" },
-        { "id": "gnawa", "label": "Gnawa", "confidence": "high" },
-        { "id": "tuareg", "label": "Tuareg", "confidence": "high" },
-        { "id": "coptic", "label": "Coptic", "confidence": "high" },
-        { "id": "egyptian", "label": "Egyptian", "confidence": "high" },
-        { "id": "african-folk", "label": "African Folk", "confidence": "high" },
-        { "id": "afrikaner-folk", "label": "Afrikaner Folk", "confidence": "high" },
-        { "id": "griot", "label": "Griot", "confidence": "high" },
-        { "id": "cape-verdean", "label": "Cape Verdean", "confidence": "high" },
-        { "id": "appalachian-folk", "label": "Appalachian Folk", "confidence": "high" },
-        { "id": "delta-blues", "label": "Delta Blues", "confidence": "high" },
-        { "id": "swamp-blues", "label": "Swamp Blues", "confidence": "high" },
-        { "id": "chicago-blues", "label": "Chicago Blues", "confidence": "high" },
-        { "id": "acoustic-texas-blues", "label": "Acoustic Texas Blues", "confidence": "high" },
-        { "id": "fife-and-drum-blues", "label": "Fife and Drum Blues", "confidence": "high" },
-        { "id": "new-wave", "label": "New Wave", "confidence": "high" },
-        { "id": "electropop", "label": "Electropop", "confidence": "high" },
-        { "id": "city-pop", "label": "City Pop", "confidence": "high" },
-        { "id": "future-bass", "label": "Future Bass", "confidence": "high" },
-        { "id": "kawaii-future-bass", "label": "Kawaii Future Bass", "confidence": "high" },
-        { "id": "bubblegum-dance", "label": "Bubblegum Dance", "confidence": "high" },
-        { "id": "bubblegum-bass", "label": "Bubblegum Bass", "confidence": "high" },
-        { "id": "dancepop", "label": "Dancepop", "confidence": "high" },
-        { "id": "dancecore", "label": "Dancecore", "confidence": "high" },
-        { "id": "popcore", "label": "Popcore", "confidence": "high" },
-        { "id": "cabaret", "label": "Cabaret", "confidence": "high" },
-        { "id": "chanson", "label": "Chanson", "confidence": "high" },
-        { "id": "opera", "label": "Opera", "confidence": "high" },
-        { "id": "symphonic-opera", "label": "Symphonic Opera", "confidence": "high" },
-        { "id": "barbershop", "label": "Barbershop", "confidence": "high" },
-        { "id": "polka", "label": "Polka", "confidence": "high" },
-        { "id": "mariachi", "label": "Mariachi", "confidence": "high" },
-        { "id": "norteño", "label": "Norteño", "confidence": "high" },
-        { "id": "rumba", "label": "Rumba", "confidence": "high" },
-        { "id": "hawaiian", "label": "Hawaiian", "confidence": "high" },
-        { "id": "balkan-brass-band", "label": "Balkan Brass Band", "confidence": "high" },
-        { "id": "slushwave", "label": "Slushwave", "confidence": "high" },
-        { "id": "drumstep", "label": "Drumstep", "confidence": "high" },
-        { "id": "breakstep", "label": "Breakstep", "confidence": "high" },
-        { "id": "algorave", "label": "Algorave", "confidence": "high" },
-        { "id": "16-bit", "label": "16-Bit", "confidence": "high" },
-        { "id": "anti-folk", "label": "Anti-Folk", "confidence": "high" },
-        { "id": "american-primitivism", "label": "American Primitivism", "confidence": "high" },
-        { "id": "southern-rock", "label": "Southern Rock", "confidence": "high" },
-        { "id": "sertanejo", "label": "Sertanejo", "confidence": "high" },
-        { "id": "cajun", "label": "Cajun", "confidence": "high" },
-        { "id": "new-orleans", "label": "New Orleans", "confidence": "high" },
-        { "id": "dakar", "label": "Dakar", "confidence": "high" },
-        { "id": "havana", "label": "Havana", "confidence": "high" },
-        { "id": "liverpool", "label": "Liverpool", "confidence": "high" },
-        { "id": "tokyo", "label": "Tokyo", "confidence": "high" }
+        {
+          "id": "pop",
+          "label": "Pop",
+          "confidence": "high"
+        },
+        {
+          "id": "rock",
+          "label": "Rock",
+          "confidence": "high"
+        },
+        {
+          "id": "hip-hop",
+          "label": "Hip Hop",
+          "confidence": "high"
+        },
+        {
+          "id": "jazz",
+          "label": "Jazz",
+          "confidence": "high"
+        },
+        {
+          "id": "classical",
+          "label": "Classical",
+          "confidence": "high"
+        },
+        {
+          "id": "electronic",
+          "label": "Electronic",
+          "confidence": "high"
+        },
+        {
+          "id": "edm",
+          "label": "EDM",
+          "confidence": "high"
+        },
+        {
+          "id": "blues",
+          "label": "Blues",
+          "confidence": "high"
+        },
+        {
+          "id": "soul",
+          "label": "Soul",
+          "confidence": "high"
+        },
+        {
+          "id": "funk",
+          "label": "Funk",
+          "confidence": "high"
+        },
+        {
+          "id": "reggae",
+          "label": "Reggae",
+          "confidence": "high"
+        },
+        {
+          "id": "country",
+          "label": "Country",
+          "confidence": "high"
+        },
+        {
+          "id": "folk",
+          "label": "Folk",
+          "confidence": "high"
+        },
+        {
+          "id": "metal",
+          "label": "Metal",
+          "confidence": "high"
+        },
+        {
+          "id": "punk",
+          "label": "Punk",
+          "confidence": "high"
+        },
+        {
+          "id": "indie",
+          "label": "Indie",
+          "confidence": "high"
+        },
+        {
+          "id": "alternative-rock",
+          "label": "Alternative Rock",
+          "confidence": "high"
+        },
+        {
+          "id": "blues-rock",
+          "label": "Blues Rock",
+          "confidence": "high"
+        },
+        {
+          "id": "bluegrass",
+          "label": "Bluegrass",
+          "confidence": "high"
+        },
+        {
+          "id": "trance",
+          "label": "Trance",
+          "confidence": "high"
+        },
+        {
+          "id": "house",
+          "label": "House",
+          "confidence": "high"
+        },
+        {
+          "id": "techno",
+          "label": "Techno",
+          "confidence": "high"
+        },
+        {
+          "id": "dubstep",
+          "label": "Dubstep",
+          "confidence": "high"
+        },
+        {
+          "id": "trap",
+          "label": "Trap",
+          "confidence": "high"
+        },
+        {
+          "id": "rap",
+          "label": "Rap",
+          "confidence": "high"
+        },
+        {
+          "id": "dance",
+          "label": "Dance",
+          "confidence": "high"
+        },
+        {
+          "id": "disco",
+          "label": "Disco",
+          "confidence": "high"
+        },
+        {
+          "id": "swing",
+          "label": "Swing",
+          "confidence": "high"
+        },
+        {
+          "id": "bossa-nova",
+          "label": "Bossa Nova",
+          "confidence": "high"
+        },
+        {
+          "id": "samba",
+          "label": "Samba",
+          "confidence": "high"
+        },
+        {
+          "id": "salsa",
+          "label": "Salsa",
+          "confidence": "high"
+        },
+        {
+          "id": "tango",
+          "label": "Tango",
+          "confidence": "high"
+        },
+        {
+          "id": "flamenco",
+          "label": "Flamenco",
+          "confidence": "high"
+        },
+        {
+          "id": "reggaeton",
+          "label": "Reggaeton",
+          "confidence": "high"
+        },
+        {
+          "id": "cumbia",
+          "label": "Cumbia",
+          "confidence": "high"
+        },
+        {
+          "id": "merengue",
+          "label": "Merengue",
+          "confidence": "high"
+        },
+        {
+          "id": "bachata",
+          "label": "Bachata",
+          "confidence": "high"
+        },
+        {
+          "id": "afrobeat",
+          "label": "Afrobeat",
+          "confidence": "high"
+        },
+        {
+          "id": "afro-jazz",
+          "label": "Afro-Jazz",
+          "confidence": "high"
+        },
+        {
+          "id": "afro-funk",
+          "label": "Afro-Funk",
+          "confidence": "high"
+        },
+        {
+          "id": "afro-house",
+          "label": "Afro House",
+          "confidence": "high"
+        },
+        {
+          "id": "afropiano",
+          "label": "Afropiano",
+          "confidence": "high"
+        },
+        {
+          "id": "afroswing",
+          "label": "Afroswing",
+          "confidence": "high"
+        },
+        {
+          "id": "afro-trap",
+          "label": "Afro Trap",
+          "confidence": "high"
+        },
+        {
+          "id": "afro-rock",
+          "label": "Afro-Rock",
+          "confidence": "high"
+        },
+        {
+          "id": "afro-cuban-jazz",
+          "label": "Afro-Cuban Jazz",
+          "confidence": "high"
+        },
+        {
+          "id": "k-pop",
+          "label": "K-Pop",
+          "confidence": "high"
+        },
+        {
+          "id": "j-pop",
+          "label": "J-Pop",
+          "confidence": "high"
+        },
+        {
+          "id": "synthwave",
+          "label": "Synthwave",
+          "confidence": "high"
+        },
+        {
+          "id": "synthpop",
+          "label": "Synthpop",
+          "confidence": "high"
+        },
+        {
+          "id": "dream-pop",
+          "label": "Dream Pop",
+          "confidence": "high"
+        },
+        {
+          "id": "shoegaze",
+          "label": "Shoegaze",
+          "confidence": "high"
+        },
+        {
+          "id": "lo-fi",
+          "label": "Lo-fi",
+          "confidence": "high"
+        },
+        {
+          "id": "chillwave",
+          "label": "Chillwave",
+          "confidence": "high"
+        },
+        {
+          "id": "chillstep",
+          "label": "Chillstep",
+          "confidence": "high"
+        },
+        {
+          "id": "chillsynth",
+          "label": "Chillsynth",
+          "confidence": "high"
+        },
+        {
+          "id": "bedroom-pop",
+          "label": "Bedroom Pop",
+          "confidence": "high"
+        },
+        {
+          "id": "indie-pop",
+          "label": "Indie Pop",
+          "confidence": "high"
+        },
+        {
+          "id": "alt-pop",
+          "label": "Alt-Pop",
+          "confidence": "high"
+        },
+        {
+          "id": "alt-country",
+          "label": "Alt-Country",
+          "confidence": "high"
+        },
+        {
+          "id": "americana",
+          "label": "Americana",
+          "confidence": "high"
+        },
+        {
+          "id": "gospel",
+          "label": "Gospel",
+          "confidence": "high"
+        },
+        {
+          "id": "motown",
+          "label": "Motown",
+          "confidence": "high"
+        },
+        {
+          "id": "new-jack-swing",
+          "label": "New Jack Swing",
+          "confidence": "high"
+        },
+        {
+          "id": "boogie",
+          "label": "Boogie",
+          "confidence": "high"
+        },
+        {
+          "id": "p-funk",
+          "label": "P-Funk",
+          "confidence": "high"
+        },
+        {
+          "id": "doo-wop",
+          "label": "Doo-Wop",
+          "confidence": "high"
+        },
+        {
+          "id": "rockabilly",
+          "label": "Rockabilly",
+          "confidence": "high"
+        },
+        {
+          "id": "surf-rock",
+          "label": "Surf Rock",
+          "confidence": "high"
+        },
+        {
+          "id": "grunge",
+          "label": "Grunge",
+          "confidence": "high"
+        },
+        {
+          "id": "emo",
+          "label": "Emo",
+          "confidence": "high"
+        },
+        {
+          "id": "math-rock",
+          "label": "Math Rock",
+          "confidence": "high"
+        },
+        {
+          "id": "prog",
+          "label": "Prog",
+          "confidence": "high"
+        },
+        {
+          "id": "symphonic-metal",
+          "label": "Symphonic Metal",
+          "confidence": "high"
+        },
+        {
+          "id": "drum-and-bass",
+          "label": "Drum and Bass",
+          "confidence": "high"
+        },
+        {
+          "id": "liquid-drum-and-bass",
+          "label": "Liquid Drum and Bass",
+          "confidence": "high"
+        },
+        {
+          "id": "drill-and-bass",
+          "label": "Drill and Bass",
+          "confidence": "high"
+        },
+        {
+          "id": "drill",
+          "label": "Drill",
+          "confidence": "high"
+        },
+        {
+          "id": "jungle",
+          "label": "Jungle",
+          "confidence": "high"
+        },
+        {
+          "id": "breakbeat",
+          "label": "Breakbeat",
+          "confidence": "high"
+        },
+        {
+          "id": "grime",
+          "label": "Grime",
+          "confidence": "high"
+        },
+        {
+          "id": "dubstep",
+          "label": "Dubstep",
+          "confidence": "high"
+        },
+        {
+          "id": "2-step",
+          "label": "2-Step",
+          "confidence": "high"
+        },
+        {
+          "id": "garage",
+          "label": "Garage",
+          "confidence": "high"
+        },
+        {
+          "id": "glitch-hop",
+          "label": "Glitch Hop",
+          "confidence": "high"
+        },
+        {
+          "id": "ambient-techno",
+          "label": "Ambient Techno",
+          "confidence": "high"
+        },
+        {
+          "id": "ambient-house",
+          "label": "Ambient House",
+          "confidence": "high"
+        },
+        {
+          "id": "ambient-dub",
+          "label": "Ambient Dub",
+          "confidence": "high"
+        },
+        {
+          "id": "ambient-trance",
+          "label": "Ambient Trance",
+          "confidence": "high"
+        },
+        {
+          "id": "ambient-noise-wall",
+          "label": "Ambient Noise Wall",
+          "confidence": "high"
+        },
+        {
+          "id": "acid-house",
+          "label": "Acid House",
+          "confidence": "high"
+        },
+        {
+          "id": "acid-jazz",
+          "label": "Acid Jazz",
+          "confidence": "high"
+        },
+        {
+          "id": "acid-rock",
+          "label": "Acid Rock",
+          "confidence": "high"
+        },
+        {
+          "id": "acid-trance",
+          "label": "Acid Trance",
+          "confidence": "high"
+        },
+        {
+          "id": "acid-techno",
+          "label": "Acid Techno",
+          "confidence": "high"
+        },
+        {
+          "id": "acid-breaks",
+          "label": "Acid Breaks",
+          "confidence": "high"
+        },
+        {
+          "id": "goa-trance",
+          "label": "Goa Trance",
+          "confidence": "high"
+        },
+        {
+          "id": "dark-goa-trance",
+          "label": "Dark Goa Trance",
+          "confidence": "high"
+        },
+        {
+          "id": "psybient",
+          "label": "Psybient",
+          "confidence": "high"
+        },
+        {
+          "id": "illbient",
+          "label": "Illbient",
+          "confidence": "high"
+        },
+        {
+          "id": "hypnagogic",
+          "label": "Hypnagogic",
+          "confidence": "high"
+        },
+        {
+          "id": "hyphy",
+          "label": "Hyphy",
+          "confidence": "high"
+        },
+        {
+          "id": "cloud-rap",
+          "label": "Cloud Rap",
+          "confidence": "high"
+        },
+        {
+          "id": "boom-bap",
+          "label": "Boom Bap",
+          "confidence": "high"
+        },
+        {
+          "id": "dirty-south",
+          "label": "Dirty South",
+          "confidence": "high"
+        },
+        {
+          "id": "crunk",
+          "label": "Crunk",
+          "confidence": "high"
+        },
+        {
+          "id": "dancehall",
+          "label": "Dancehall",
+          "confidence": "high"
+        },
+        {
+          "id": "roots-reggae",
+          "label": "Roots Reggae",
+          "confidence": "high"
+        },
+        {
+          "id": "pacific-reggae",
+          "label": "Pacific Reggae",
+          "confidence": "high"
+        },
+        {
+          "id": "arabic-reggae",
+          "label": "Arabic Reggae",
+          "confidence": "high"
+        },
+        {
+          "id": "dembow",
+          "label": "Dembow",
+          "confidence": "high"
+        },
+        {
+          "id": "calypso",
+          "label": "Calypso",
+          "confidence": "high"
+        },
+        {
+          "id": "mento",
+          "label": "Mento",
+          "confidence": "high"
+        },
+        {
+          "id": "big-band",
+          "label": "Big Band",
+          "confidence": "high"
+        },
+        {
+          "id": "bebop",
+          "label": "Bebop",
+          "confidence": "high"
+        },
+        {
+          "id": "avant-garde-jazz",
+          "label": "Avant-Garde Jazz",
+          "confidence": "high"
+        },
+        {
+          "id": "jazz-fusion",
+          "label": "Jazz Fusion",
+          "confidence": "high"
+        },
+        {
+          "id": "smooth-jazz",
+          "label": "Smooth Jazz",
+          "confidence": "high"
+        },
+        {
+          "id": "raga-jazz",
+          "label": "Raga Jazz",
+          "confidence": "high"
+        },
+        {
+          "id": "klezmer",
+          "label": "Klezmer",
+          "confidence": "high"
+        },
+        {
+          "id": "celtic",
+          "label": "Celtic",
+          "confidence": "high"
+        },
+        {
+          "id": "carnatic",
+          "label": "Carnatic",
+          "confidence": "high"
+        },
+        {
+          "id": "raga",
+          "label": "Raga",
+          "confidence": "high"
+        },
+        {
+          "id": "gnawa",
+          "label": "Gnawa",
+          "confidence": "high"
+        },
+        {
+          "id": "tuareg",
+          "label": "Tuareg",
+          "confidence": "high"
+        },
+        {
+          "id": "coptic",
+          "label": "Coptic",
+          "confidence": "high"
+        },
+        {
+          "id": "egyptian",
+          "label": "Egyptian",
+          "confidence": "high"
+        },
+        {
+          "id": "african-folk",
+          "label": "African Folk",
+          "confidence": "high"
+        },
+        {
+          "id": "afrikaner-folk",
+          "label": "Afrikaner Folk",
+          "confidence": "high"
+        },
+        {
+          "id": "griot",
+          "label": "Griot",
+          "confidence": "high"
+        },
+        {
+          "id": "cape-verdean",
+          "label": "Cape Verdean",
+          "confidence": "high"
+        },
+        {
+          "id": "appalachian-folk",
+          "label": "Appalachian Folk",
+          "confidence": "high"
+        },
+        {
+          "id": "delta-blues",
+          "label": "Delta Blues",
+          "confidence": "high"
+        },
+        {
+          "id": "swamp-blues",
+          "label": "Swamp Blues",
+          "confidence": "high"
+        },
+        {
+          "id": "chicago-blues",
+          "label": "Chicago Blues",
+          "confidence": "high"
+        },
+        {
+          "id": "acoustic-texas-blues",
+          "label": "Acoustic Texas Blues",
+          "confidence": "high"
+        },
+        {
+          "id": "fife-and-drum-blues",
+          "label": "Fife and Drum Blues",
+          "confidence": "high"
+        },
+        {
+          "id": "new-wave",
+          "label": "New Wave",
+          "confidence": "high"
+        },
+        {
+          "id": "electropop",
+          "label": "Electropop",
+          "confidence": "high"
+        },
+        {
+          "id": "city-pop",
+          "label": "City Pop",
+          "confidence": "high"
+        },
+        {
+          "id": "future-bass",
+          "label": "Future Bass",
+          "confidence": "high"
+        },
+        {
+          "id": "kawaii-future-bass",
+          "label": "Kawaii Future Bass",
+          "confidence": "high"
+        },
+        {
+          "id": "bubblegum-dance",
+          "label": "Bubblegum Dance",
+          "confidence": "high"
+        },
+        {
+          "id": "bubblegum-bass",
+          "label": "Bubblegum Bass",
+          "confidence": "high"
+        },
+        {
+          "id": "dancepop",
+          "label": "Dancepop",
+          "confidence": "high"
+        },
+        {
+          "id": "dancecore",
+          "label": "Dancecore",
+          "confidence": "high"
+        },
+        {
+          "id": "popcore",
+          "label": "Popcore",
+          "confidence": "high"
+        },
+        {
+          "id": "cabaret",
+          "label": "Cabaret",
+          "confidence": "high"
+        },
+        {
+          "id": "chanson",
+          "label": "Chanson",
+          "confidence": "high"
+        },
+        {
+          "id": "opera",
+          "label": "Opera",
+          "confidence": "high"
+        },
+        {
+          "id": "symphonic-opera",
+          "label": "Symphonic Opera",
+          "confidence": "high"
+        },
+        {
+          "id": "barbershop",
+          "label": "Barbershop",
+          "confidence": "high"
+        },
+        {
+          "id": "polka",
+          "label": "Polka",
+          "confidence": "high"
+        },
+        {
+          "id": "mariachi",
+          "label": "Mariachi",
+          "confidence": "high"
+        },
+        {
+          "id": "norteño",
+          "label": "Norteño",
+          "confidence": "high"
+        },
+        {
+          "id": "rumba",
+          "label": "Rumba",
+          "confidence": "high"
+        },
+        {
+          "id": "hawaiian",
+          "label": "Hawaiian",
+          "confidence": "high"
+        },
+        {
+          "id": "balkan-brass-band",
+          "label": "Balkan Brass Band",
+          "confidence": "high"
+        },
+        {
+          "id": "slushwave",
+          "label": "Slushwave",
+          "confidence": "high"
+        },
+        {
+          "id": "drumstep",
+          "label": "Drumstep",
+          "confidence": "high"
+        },
+        {
+          "id": "breakstep",
+          "label": "Breakstep",
+          "confidence": "high"
+        },
+        {
+          "id": "algorave",
+          "label": "Algorave",
+          "confidence": "high"
+        },
+        {
+          "id": "16-bit",
+          "label": "16-Bit",
+          "confidence": "high"
+        },
+        {
+          "id": "anti-folk",
+          "label": "Anti-Folk",
+          "confidence": "high"
+        },
+        {
+          "id": "american-primitivism",
+          "label": "American Primitivism",
+          "confidence": "high"
+        },
+        {
+          "id": "southern-rock",
+          "label": "Southern Rock",
+          "confidence": "high"
+        },
+        {
+          "id": "sertanejo",
+          "label": "Sertanejo",
+          "confidence": "high"
+        },
+        {
+          "id": "cajun",
+          "label": "Cajun",
+          "confidence": "high"
+        },
+        {
+          "id": "new-orleans",
+          "label": "New Orleans",
+          "confidence": "high"
+        },
+        {
+          "id": "dakar",
+          "label": "Dakar",
+          "confidence": "high"
+        },
+        {
+          "id": "havana",
+          "label": "Havana",
+          "confidence": "high"
+        },
+        {
+          "id": "liverpool",
+          "label": "Liverpool",
+          "confidence": "high"
+        },
+        {
+          "id": "tokyo",
+          "label": "Tokyo",
+          "confidence": "high"
+        }
       ]
     },
     "regional": {
@@ -188,17 +880,61 @@
       "emoji": "🌍",
       "multiple": false,
       "tags": [
-        { "id": "arabic", "label": "Arabic", "confidence": "high" },
-        { "id": "spanish", "label": "Spanish", "confidence": "high" },
-        { "id": "french", "label": "French", "confidence": "high" },
-        { "id": "portuguese", "label": "Portuguese", "confidence": "high" },
-        { "id": "russian", "label": "Russian", "confidence": "high" },
-        { "id": "japanese", "label": "Japanese", "confidence": "high" },
-        { "id": "korean", "label": "Korean", "confidence": "high" },
-        { "id": "mandarin", "label": "Mandarin", "confidence": "high" },
-        { "id": "hindi", "label": "Hindi", "confidence": "high" },
-        { "id": "bengali", "label": "Bengali", "confidence": "high" },
-        { "id": "urdu", "label": "Urdu", "confidence": "high" }
+        {
+          "id": "arabic",
+          "label": "Arabic",
+          "confidence": "high"
+        },
+        {
+          "id": "spanish",
+          "label": "Spanish",
+          "confidence": "high"
+        },
+        {
+          "id": "french",
+          "label": "French",
+          "confidence": "high"
+        },
+        {
+          "id": "portuguese",
+          "label": "Portuguese",
+          "confidence": "high"
+        },
+        {
+          "id": "russian",
+          "label": "Russian",
+          "confidence": "high"
+        },
+        {
+          "id": "japanese",
+          "label": "Japanese",
+          "confidence": "high"
+        },
+        {
+          "id": "korean",
+          "label": "Korean",
+          "confidence": "high"
+        },
+        {
+          "id": "mandarin",
+          "label": "Mandarin",
+          "confidence": "high"
+        },
+        {
+          "id": "hindi",
+          "label": "Hindi",
+          "confidence": "high"
+        },
+        {
+          "id": "bengali",
+          "label": "Bengali",
+          "confidence": "high"
+        },
+        {
+          "id": "urdu",
+          "label": "Urdu",
+          "confidence": "high"
+        }
       ]
     },
     "instruments": {
@@ -206,30 +942,126 @@
       "emoji": "🎸",
       "multiple": true,
       "tags": [
-        { "id": "guitar", "label": "Guitar", "confidence": "high" },
-        { "id": "electric-guitar", "label": "Electric Guitar", "confidence": "high" },
-        { "id": "acoustic-guitar", "label": "Acoustic Guitar", "confidence": "high" },
-        { "id": "bass-guitar", "label": "Bass Guitar", "confidence": "high" },
-        { "id": "violin", "label": "Violin", "confidence": "high" },
-        { "id": "cello", "label": "Cello", "confidence": "high" },
-        { "id": "piano", "label": "Piano", "confidence": "high" },
-        { "id": "harpsichord", "label": "Harpsichord", "confidence": "high" },
-        { "id": "organ", "label": "Organ", "confidence": "high" },
-        { "id": "synthesizer", "label": "Synthesizer", "confidence": "high" },
-        { "id": "saxophone", "label": "Saxophone", "confidence": "high" },
-        { "id": "trumpet", "label": "Trumpet", "confidence": "high" },
-        { "id": "accordion", "label": "Accordion", "confidence": "high" },
-        { "id": "koto", "label": "Koto", "confidence": "high" },
-        { "id": "sitar", "label": "Sitar", "confidence": "high" },
-        { "id": "tabla", "label": "Tabla", "confidence": "high" },
-        { "id": "drums", "label": "Drums", "confidence": "high" },
-        { "id": "808", "label": "808", "confidence": "high" },
-        { "id": "harp", "label": "Harp", "confidence": "high" },
-        { "id": "flute", "label": "Flute", "confidence": "high" },
-        { "id": "banjo", "label": "Banjo", "confidence": "high" },
-        { "id": "ukulele", "label": "Ukulele", "confidence": "high" },
-        { "id": "theremin", "label": "Theremin", "confidence": "medium" },
-        { "id": "vocoder", "label": "Vocoder", "confidence": "medium" }
+        {
+          "id": "guitar",
+          "label": "Guitar",
+          "confidence": "high"
+        },
+        {
+          "id": "electric-guitar",
+          "label": "Electric Guitar",
+          "confidence": "high"
+        },
+        {
+          "id": "acoustic-guitar",
+          "label": "Acoustic Guitar",
+          "confidence": "high"
+        },
+        {
+          "id": "bass-guitar",
+          "label": "Bass Guitar",
+          "confidence": "high"
+        },
+        {
+          "id": "violin",
+          "label": "Violin",
+          "confidence": "high"
+        },
+        {
+          "id": "cello",
+          "label": "Cello",
+          "confidence": "high"
+        },
+        {
+          "id": "piano",
+          "label": "Piano",
+          "confidence": "high"
+        },
+        {
+          "id": "harpsichord",
+          "label": "Harpsichord",
+          "confidence": "high"
+        },
+        {
+          "id": "organ",
+          "label": "Organ",
+          "confidence": "high"
+        },
+        {
+          "id": "synthesizer",
+          "label": "Synthesizer",
+          "confidence": "high"
+        },
+        {
+          "id": "saxophone",
+          "label": "Saxophone",
+          "confidence": "high"
+        },
+        {
+          "id": "trumpet",
+          "label": "Trumpet",
+          "confidence": "high"
+        },
+        {
+          "id": "accordion",
+          "label": "Accordion",
+          "confidence": "high"
+        },
+        {
+          "id": "koto",
+          "label": "Koto",
+          "confidence": "high"
+        },
+        {
+          "id": "sitar",
+          "label": "Sitar",
+          "confidence": "high"
+        },
+        {
+          "id": "tabla",
+          "label": "Tabla",
+          "confidence": "high"
+        },
+        {
+          "id": "drums",
+          "label": "Drums",
+          "confidence": "high"
+        },
+        {
+          "id": "808",
+          "label": "808",
+          "confidence": "high"
+        },
+        {
+          "id": "harp",
+          "label": "Harp",
+          "confidence": "high"
+        },
+        {
+          "id": "flute",
+          "label": "Flute",
+          "confidence": "high"
+        },
+        {
+          "id": "banjo",
+          "label": "Banjo",
+          "confidence": "high"
+        },
+        {
+          "id": "ukulele",
+          "label": "Ukulele",
+          "confidence": "high"
+        },
+        {
+          "id": "theremin",
+          "label": "Theremin",
+          "confidence": "medium"
+        },
+        {
+          "id": "vocoder",
+          "label": "Vocoder",
+          "confidence": "medium"
+        }
       ]
     },
     "moods": {
@@ -237,36 +1069,156 @@
       "emoji": "😊",
       "multiple": true,
       "tags": [
-        { "id": "happy", "label": "Happy", "confidence": "high" },
-        { "id": "joyful", "label": "Joyful", "confidence": "high" },
-        { "id": "euphoric", "label": "Euphoric", "confidence": "high" },
-        { "id": "uplifting", "label": "Uplifting", "confidence": "high" },
-        { "id": "playful", "label": "Playful", "confidence": "high" },
-        { "id": "dreamy", "label": "Dreamy", "confidence": "high" },
-        { "id": "calm", "label": "Calm", "confidence": "high" },
-        { "id": "peaceful", "label": "Peaceful", "confidence": "high" },
-        { "id": "relaxing", "label": "Relaxing", "confidence": "high" },
-        { "id": "ethereal", "label": "Ethereal", "confidence": "high" },
-        { "id": "sad", "label": "Sad", "confidence": "high" },
-        { "id": "melancholic", "label": "Melancholic", "confidence": "high" },
-        { "id": "nostalgic", "label": "Nostalgic", "confidence": "high" },
-        { "id": "dark", "label": "Dark", "confidence": "high" },
-        { "id": "haunting", "label": "Haunting", "confidence": "high" },
-        { "id": "mysterious", "label": "Mysterious", "confidence": "high" },
-        { "id": "energetic", "label": "Energetic", "confidence": "high" },
-        { "id": "powerful", "label": "Powerful", "confidence": "high" },
-        { "id": "aggressive", "label": "Aggressive", "confidence": "high" },
-        { "id": "romantic", "label": "Romantic", "confidence": "high" },
-        { "id": "passionate", "label": "Passionate", "confidence": "high" },
-        { "id": "epic", "label": "Epic", "confidence": "high" },
-        { "id": "dramatic", "label": "Dramatic", "confidence": "high" },
-        { "id": "triumphant", "label": "Triumphant", "confidence": "high" },
-        { "id": "heroic", "label": "Heroic", "confidence": "high" },
-        { "id": "groovy", "label": "Groovy", "confidence": "high" },
-        { "id": "hypnotic", "label": "Hypnotic", "confidence": "high" },
-        { "id": "soulful", "label": "Soulful", "confidence": "high" },
-        { "id": "spiritual", "label": "Spiritual", "confidence": "high" },
-        { "id": "motivational", "label": "Motivational", "confidence": "high" }
+        {
+          "id": "happy",
+          "label": "Happy",
+          "confidence": "high"
+        },
+        {
+          "id": "joyful",
+          "label": "Joyful",
+          "confidence": "high"
+        },
+        {
+          "id": "euphoric",
+          "label": "Euphoric",
+          "confidence": "high"
+        },
+        {
+          "id": "uplifting",
+          "label": "Uplifting",
+          "confidence": "high"
+        },
+        {
+          "id": "playful",
+          "label": "Playful",
+          "confidence": "high"
+        },
+        {
+          "id": "dreamy",
+          "label": "Dreamy",
+          "confidence": "high"
+        },
+        {
+          "id": "calm",
+          "label": "Calm",
+          "confidence": "high"
+        },
+        {
+          "id": "peaceful",
+          "label": "Peaceful",
+          "confidence": "high"
+        },
+        {
+          "id": "relaxing",
+          "label": "Relaxing",
+          "confidence": "high"
+        },
+        {
+          "id": "ethereal",
+          "label": "Ethereal",
+          "confidence": "high"
+        },
+        {
+          "id": "sad",
+          "label": "Sad",
+          "confidence": "high"
+        },
+        {
+          "id": "melancholic",
+          "label": "Melancholic",
+          "confidence": "high"
+        },
+        {
+          "id": "nostalgic",
+          "label": "Nostalgic",
+          "confidence": "high"
+        },
+        {
+          "id": "dark",
+          "label": "Dark",
+          "confidence": "high"
+        },
+        {
+          "id": "haunting",
+          "label": "Haunting",
+          "confidence": "high"
+        },
+        {
+          "id": "mysterious",
+          "label": "Mysterious",
+          "confidence": "high"
+        },
+        {
+          "id": "energetic",
+          "label": "Energetic",
+          "confidence": "high"
+        },
+        {
+          "id": "powerful",
+          "label": "Powerful",
+          "confidence": "high"
+        },
+        {
+          "id": "aggressive",
+          "label": "Aggressive",
+          "confidence": "high"
+        },
+        {
+          "id": "romantic",
+          "label": "Romantic",
+          "confidence": "high"
+        },
+        {
+          "id": "passionate",
+          "label": "Passionate",
+          "confidence": "high"
+        },
+        {
+          "id": "epic",
+          "label": "Epic",
+          "confidence": "high"
+        },
+        {
+          "id": "dramatic",
+          "label": "Dramatic",
+          "confidence": "high"
+        },
+        {
+          "id": "triumphant",
+          "label": "Triumphant",
+          "confidence": "high"
+        },
+        {
+          "id": "heroic",
+          "label": "Heroic",
+          "confidence": "high"
+        },
+        {
+          "id": "groovy",
+          "label": "Groovy",
+          "confidence": "high"
+        },
+        {
+          "id": "hypnotic",
+          "label": "Hypnotic",
+          "confidence": "high"
+        },
+        {
+          "id": "soulful",
+          "label": "Soulful",
+          "confidence": "high"
+        },
+        {
+          "id": "spiritual",
+          "label": "Spiritual",
+          "confidence": "high"
+        },
+        {
+          "id": "motivational",
+          "label": "Motivational",
+          "confidence": "high"
+        }
       ]
     },
     "vocals": {
@@ -274,18 +1226,66 @@
       "emoji": "🎤",
       "multiple": false,
       "tags": [
-        { "id": "male-vocals", "label": "Male Vocals", "confidence": "high" },
-        { "id": "female-vocals", "label": "Female Vocals", "confidence": "high" },
-        { "id": "no-vocals", "label": "No Vocals", "confidence": "high" },
-        { "id": "instrumental", "label": "Instrumental", "confidence": "high" },
-        { "id": "choir", "label": "Choir", "confidence": "high" },
-        { "id": "choral", "label": "Choral", "confidence": "high" },
-        { "id": "harmonies", "label": "Harmonies", "confidence": "high" },
-        { "id": "falsetto", "label": "Falsetto", "confidence": "high" },
-        { "id": "rap-vocals", "label": "Rap Vocals", "confidence": "high" },
-        { "id": "operatic", "label": "Operatic Vocals", "confidence": "high" },
-        { "id": "whisper", "label": "Whisper", "confidence": "medium" },
-        { "id": "auto-tune", "label": "Auto-tune", "confidence": "high" }
+        {
+          "id": "male-vocals",
+          "label": "Male Vocals",
+          "confidence": "high"
+        },
+        {
+          "id": "female-vocals",
+          "label": "Female Vocals",
+          "confidence": "high"
+        },
+        {
+          "id": "no-vocals",
+          "label": "No Vocals",
+          "confidence": "high"
+        },
+        {
+          "id": "instrumental",
+          "label": "Instrumental",
+          "confidence": "high"
+        },
+        {
+          "id": "choir",
+          "label": "Choir",
+          "confidence": "high"
+        },
+        {
+          "id": "choral",
+          "label": "Choral",
+          "confidence": "high"
+        },
+        {
+          "id": "harmonies",
+          "label": "Harmonies",
+          "confidence": "high"
+        },
+        {
+          "id": "falsetto",
+          "label": "Falsetto",
+          "confidence": "high"
+        },
+        {
+          "id": "rap-vocals",
+          "label": "Rap Vocals",
+          "confidence": "high"
+        },
+        {
+          "id": "operatic",
+          "label": "Operatic Vocals",
+          "confidence": "high"
+        },
+        {
+          "id": "whisper",
+          "label": "Whisper",
+          "confidence": "medium"
+        },
+        {
+          "id": "auto-tune",
+          "label": "Auto-tune",
+          "confidence": "high"
+        }
       ]
     },
     "tempo": {
@@ -293,13 +1293,41 @@
       "emoji": "🥁",
       "multiple": false,
       "tags": [
-        { "id": "very-slow", "label": "Very Slow", "confidence": "high" },
-        { "id": "slow", "label": "Slow", "confidence": "high" },
-        { "id": "moderate", "label": "Moderate", "confidence": "high" },
-        { "id": "medium-tempo", "label": "Medium Tempo", "confidence": "high" },
-        { "id": "upbeat", "label": "Upbeat", "confidence": "high" },
-        { "id": "fast", "label": "Fast", "confidence": "high" },
-        { "id": "very-fast", "label": "Very Fast", "confidence": "high" }
+        {
+          "id": "very-slow",
+          "label": "Very Slow",
+          "confidence": "high"
+        },
+        {
+          "id": "slow",
+          "label": "Slow",
+          "confidence": "high"
+        },
+        {
+          "id": "moderate",
+          "label": "Moderate",
+          "confidence": "high"
+        },
+        {
+          "id": "medium-tempo",
+          "label": "Medium Tempo",
+          "confidence": "high"
+        },
+        {
+          "id": "upbeat",
+          "label": "Upbeat",
+          "confidence": "high"
+        },
+        {
+          "id": "fast",
+          "label": "Fast",
+          "confidence": "high"
+        },
+        {
+          "id": "very-fast",
+          "label": "Very Fast",
+          "confidence": "high"
+        }
       ]
     },
     "production": {
@@ -307,21 +1335,81 @@
       "emoji": "🎚️",
       "multiple": true,
       "tags": [
-        { "id": "lo-fi-prod", "label": "Lo-fi", "confidence": "high" },
-        { "id": "vintage", "label": "Vintage", "confidence": "high" },
-        { "id": "retro", "label": "Retro", "confidence": "high" },
-        { "id": "modern", "label": "Modern", "confidence": "high" },
-        { "id": "polished", "label": "Polished", "confidence": "high" },
-        { "id": "raw", "label": "Raw", "confidence": "high" },
-        { "id": "warm", "label": "Warm", "confidence": "high" },
-        { "id": "bright", "label": "Bright", "confidence": "high" },
-        { "id": "minimalist", "label": "Minimalist", "confidence": "high" },
-        { "id": "instrumental", "label": "Instrumental", "confidence": "high" },
-        { "id": "808-bass", "label": "808 Bass", "confidence": "high" },
-        { "id": "psychedelic", "label": "Psychedelic", "confidence": "high" },
-        { "id": "symphonic", "label": "Symphonic", "confidence": "high" },
-        { "id": "acoustic", "label": "Acoustic", "confidence": "high" },
-        { "id": "cinematic", "label": "Cinematic", "confidence": "high" }
+        {
+          "id": "lo-fi-prod",
+          "label": "Lo-fi",
+          "confidence": "high"
+        },
+        {
+          "id": "vintage",
+          "label": "Vintage",
+          "confidence": "high"
+        },
+        {
+          "id": "retro",
+          "label": "Retro",
+          "confidence": "high"
+        },
+        {
+          "id": "modern",
+          "label": "Modern",
+          "confidence": "high"
+        },
+        {
+          "id": "polished",
+          "label": "Polished",
+          "confidence": "high"
+        },
+        {
+          "id": "raw",
+          "label": "Raw",
+          "confidence": "high"
+        },
+        {
+          "id": "warm",
+          "label": "Warm",
+          "confidence": "high"
+        },
+        {
+          "id": "bright",
+          "label": "Bright",
+          "confidence": "high"
+        },
+        {
+          "id": "minimalist",
+          "label": "Minimalist",
+          "confidence": "high"
+        },
+        {
+          "id": "instrumental",
+          "label": "Instrumental",
+          "confidence": "high"
+        },
+        {
+          "id": "808-bass",
+          "label": "808 Bass",
+          "confidence": "high"
+        },
+        {
+          "id": "psychedelic",
+          "label": "Psychedelic",
+          "confidence": "high"
+        },
+        {
+          "id": "symphonic",
+          "label": "Symphonic",
+          "confidence": "high"
+        },
+        {
+          "id": "acoustic",
+          "label": "Acoustic",
+          "confidence": "high"
+        },
+        {
+          "id": "cinematic",
+          "label": "Cinematic",
+          "confidence": "high"
+        }
       ]
     },
     "effects": {
@@ -329,31 +1417,131 @@
       "emoji": "🎛️",
       "multiple": true,
       "tags": [
-        { "id": "reverb", "label": "Reverb", "confidence": "high" },
-        { "id": "heavy-reverb", "label": "Heavy Reverb", "confidence": "high" },
-        { "id": "hall-reverb", "label": "Hall Reverb", "confidence": "high" },
-        { "id": "cathedral-reverb", "label": "Cathedral Reverb", "confidence": "high" },
-        { "id": "no-reverb", "label": "No Reverb", "confidence": "high" },
-        { "id": "wide-stereo", "label": "Wide Stereo", "confidence": "high" },
-        { "id": "spacious", "label": "Spacious", "confidence": "high" },
-        { "id": "intimate", "label": "Intimate", "confidence": "high" },
-        { "id": "dry", "label": "Dry", "confidence": "high" },
-        { "id": "vinyl-crackle", "label": "Vinyl Crackle", "confidence": "high" },
-        { "id": "tape-saturation", "label": "Tape Saturation", "confidence": "high" },
-        { "id": "analog-warmth", "label": "Analog Warmth", "confidence": "high" },
-        { "id": "distorted", "label": "Distorted", "confidence": "high" },
-        { "id": "heavy-distortion", "label": "Heavy Distortion", "confidence": "high" },
-        { "id": "glitchy", "label": "Glitchy", "confidence": "high" },
-        { "id": "compressed", "label": "Compressed", "confidence": "high" },
-        { "id": "punchy", "label": "Punchy", "confidence": "high" },
-        { "id": "crisp", "label": "Crisp", "confidence": "high" },
-        { "id": "crescendo", "label": "Crescendo", "confidence": "high" },
-        { "id": "fade-in", "label": "Fade In", "confidence": "high" },
-        { "id": "fade-out", "label": "Fade Out", "confidence": "high" },
-        { "id": "record-scratch", "label": "Record Scratch", "confidence": "medium" },
-        { "id": "static", "label": "Static", "confidence": "medium" },
-        { "id": "phaser", "label": "Phaser", "confidence": "medium" },
-        { "id": "flanger", "label": "Flanger", "confidence": "medium" }
+        {
+          "id": "reverb",
+          "label": "Reverb",
+          "confidence": "high"
+        },
+        {
+          "id": "heavy-reverb",
+          "label": "Heavy Reverb",
+          "confidence": "high"
+        },
+        {
+          "id": "hall-reverb",
+          "label": "Hall Reverb",
+          "confidence": "high"
+        },
+        {
+          "id": "cathedral-reverb",
+          "label": "Cathedral Reverb",
+          "confidence": "high"
+        },
+        {
+          "id": "no-reverb",
+          "label": "No Reverb",
+          "confidence": "high"
+        },
+        {
+          "id": "wide-stereo",
+          "label": "Wide Stereo",
+          "confidence": "high"
+        },
+        {
+          "id": "spacious",
+          "label": "Spacious",
+          "confidence": "high"
+        },
+        {
+          "id": "intimate",
+          "label": "Intimate",
+          "confidence": "high"
+        },
+        {
+          "id": "dry",
+          "label": "Dry",
+          "confidence": "high"
+        },
+        {
+          "id": "vinyl-crackle",
+          "label": "Vinyl Crackle",
+          "confidence": "high"
+        },
+        {
+          "id": "tape-saturation",
+          "label": "Tape Saturation",
+          "confidence": "high"
+        },
+        {
+          "id": "analog-warmth",
+          "label": "Analog Warmth",
+          "confidence": "high"
+        },
+        {
+          "id": "distorted",
+          "label": "Distorted",
+          "confidence": "high"
+        },
+        {
+          "id": "heavy-distortion",
+          "label": "Heavy Distortion",
+          "confidence": "high"
+        },
+        {
+          "id": "glitchy",
+          "label": "Glitchy",
+          "confidence": "high"
+        },
+        {
+          "id": "compressed",
+          "label": "Compressed",
+          "confidence": "high"
+        },
+        {
+          "id": "punchy",
+          "label": "Punchy",
+          "confidence": "high"
+        },
+        {
+          "id": "crisp",
+          "label": "Crisp",
+          "confidence": "high"
+        },
+        {
+          "id": "crescendo",
+          "label": "Crescendo",
+          "confidence": "high"
+        },
+        {
+          "id": "fade-in",
+          "label": "Fade In",
+          "confidence": "high"
+        },
+        {
+          "id": "fade-out",
+          "label": "Fade Out",
+          "confidence": "high"
+        },
+        {
+          "id": "record-scratch",
+          "label": "Record Scratch",
+          "confidence": "medium"
+        },
+        {
+          "id": "static",
+          "label": "Static",
+          "confidence": "medium"
+        },
+        {
+          "id": "phaser",
+          "label": "Phaser",
+          "confidence": "medium"
+        },
+        {
+          "id": "flanger",
+          "label": "Flanger",
+          "confidence": "medium"
+        }
       ]
     },
     "soundfx": {
@@ -361,23 +1549,82 @@
       "emoji": "🌊",
       "multiple": true,
       "tags": [
-        { "id": "rain", "label": "Rain", "confidence": "high" },
-        { "id": "thunder", "label": "Thunder", "confidence": "high" },
-        { "id": "ocean-waves", "label": "Ocean Waves", "confidence": "high" },
-        { "id": "wind", "label": "Wind", "confidence": "high" },
-        { "id": "fire-crackling", "label": "Fire Crackling", "confidence": "high" },
-        { "id": "birds-chirping", "label": "Birds Chirping", "confidence": "high" },
-        { "id": "forest-ambience", "label": "Forest Ambience", "confidence": "high" },
-        { "id": "city-ambience", "label": "City Ambience", "confidence": "high" },
-        { "id": "crowd-noise", "label": "Crowd Noise", "confidence": "high" },
-        { "id": "applause", "label": "Applause", "confidence": "high" },
-        { "id": "cheering", "label": "Cheering", "confidence": "high" },
-        { "id": "clapping", "label": "Clapping", "confidence": "high" },
-        { "id": "whistling", "label": "Whistling", "confidence": "medium" },
-        { "id": "church-bells", "label": "Church Bells", "confidence": "medium" },
-        { "id": "clock-ticking", "label": "Clock Ticking", "confidence": "medium" }
+        {
+          "id": "rain",
+          "label": "Rain",
+          "confidence": "high"
+        },
+        {
+          "id": "thunder",
+          "label": "Thunder",
+          "confidence": "high"
+        },
+        {
+          "id": "ocean-waves",
+          "label": "Ocean Waves",
+          "confidence": "high"
+        },
+        {
+          "id": "wind",
+          "label": "Wind",
+          "confidence": "high"
+        },
+        {
+          "id": "fire-crackling",
+          "label": "Fire Crackling",
+          "confidence": "high"
+        },
+        {
+          "id": "birds-chirping",
+          "label": "Birds Chirping",
+          "confidence": "high"
+        },
+        {
+          "id": "forest-ambience",
+          "label": "Forest Ambience",
+          "confidence": "high"
+        },
+        {
+          "id": "city-ambience",
+          "label": "City Ambience",
+          "confidence": "high"
+        },
+        {
+          "id": "crowd-noise",
+          "label": "Crowd Noise",
+          "confidence": "high"
+        },
+        {
+          "id": "applause",
+          "label": "Applause",
+          "confidence": "high"
+        },
+        {
+          "id": "cheering",
+          "label": "Cheering",
+          "confidence": "high"
+        },
+        {
+          "id": "clapping",
+          "label": "Clapping",
+          "confidence": "high"
+        },
+        {
+          "id": "whistling",
+          "label": "Whistling",
+          "confidence": "medium"
+        },
+        {
+          "id": "church-bells",
+          "label": "Church Bells",
+          "confidence": "medium"
+        },
+        {
+          "id": "clock-ticking",
+          "label": "Clock Ticking",
+          "confidence": "medium"
+        }
       ]
     }
   }
 }
-
